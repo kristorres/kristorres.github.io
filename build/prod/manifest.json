@@ -1,0 +1,16 @@
+{
+    "short_name": "Kris Torres",
+    "name": "Kris Torres’s Website",
+    "description": "Kris Torres’s website.",
+    "icons": [
+        {
+            "src": "./images/logos/kt-logo-main.png",
+            "sizes": "900x900",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "./index.html",
+    "display": "browser",
+    "theme_color": "#1A64D7",
+    "background_color": "#FFFFFF"
+}

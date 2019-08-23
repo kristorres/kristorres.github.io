@@ -1,0 +1,48 @@
+$mdc-theme-primary: #1A64D7;
+$mdc-theme-secondary: #FFB500;
+$mdc-theme-error: #ED1C27;
+$mdc-theme-surface: white;
+$mdc-theme-background: #DAE0EA;
+
+$font-weights: (
+    light: 300,
+    regular: 400,
+    bold: 700
+);
+
+$font-families: (
+    source-sans-pro: unquote("'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Lucida Grande', sans-serif"),
+    oswald: unquote("Oswald, HelveticaNeue-CondensedBold, sans-serif")
+);
+
+$mdc-typography-font-family: map-get($font-families, source-sans-pro);
+
+@function mdc-font(
+    $size,
+    $weight,
+    $letter-spacing,
+    $text-transform,
+    $family: null,
+) {
+    @return (
+        font-family: map-get($font-families, $family),
+        font-size: $size,
+        font-weight: map-get($font-weights, $weight),
+        letter-spacing: $letter-spacing,
+        text-transform: $text-transform
+    );
+}
+
+$mdc-typography-styles-headline1: mdc-font(96px, bold, -1.5px, none, oswald);
+$mdc-typography-styles-headline2: mdc-font(60px, bold, -0.5px, none, oswald);
+$mdc-typography-styles-headline3: mdc-font(48px, bold, 0, none, oswald);
+$mdc-typography-styles-headline4: mdc-font(36px, bold, 0.25px, none, oswald);
+$mdc-typography-styles-headline5: mdc-font(24px, bold, 0, none, oswald);
+$mdc-typography-styles-headline6: mdc-font(20px, bold, 0.15px, none);
+$mdc-typography-styles-subtitle1: mdc-font(16px, bold, 0.15px, none);
+$mdc-typography-styles-subtitle2: mdc-font(14px, bold, 0.1px, none);
+$mdc-typography-styles-body1: mdc-font(16px, regular, 0.5px, none);
+$mdc-typography-styles-body2: mdc-font(14px, regular, 0.25px, none);
+$mdc-typography-styles-button: mdc-font(14px, bold, 1.25px, uppercase);
+$mdc-typography-styles-caption: mdc-font(12px, light, 0.4px, none);
+$mdc-typography-styles-overline: mdc-font(10px, light, 1.5px, uppercase);
