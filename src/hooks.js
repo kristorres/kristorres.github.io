@@ -3,7 +3,7 @@ import {useEffect} from "react";
 const useComponentDidMount = (handler) => {
     useEffect(
         () => {
-            handler()
+            handler();
         },
         []
     );
