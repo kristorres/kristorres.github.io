@@ -1,15 +1,83 @@
-import React from "react";
+import React, {useState} from "react";
 
 import FlexBox from "./FlexBox.js";
+import {useComponentDidMount} from "../hooks.js";
+import request from "../request.js";
 
-const styles = {
-    header: {
-        backgroundColor: "#37474F",
-        backgroundImage: "radial-gradient(#37474F 25%, #607D8B)"
+const URLs = Object.freeze({
+    LiturgicalDay: "http://calapi.inadiutorium.cz/api/v0/en/calendars/default"
+});
+
+const HeaderPalettes = Object.freeze({
+    Green: {primary: "#2E7D32", secondary: "#4CAF50"},
+    Violet: {primary: "#4527A0", secondary: "#673AB7"},
+    Purple: {primary: "#6A1B9A", secondary: "#9C27B0"},
+    Rose: {primary: "#AD1457", secondary: "#E91E63"},
+    Red: {primary: "#C62828", secondary: "#F44336"},
+    White: {primary: "white", secondary: "yellow"},
+    Default: {primary: "#37474F", secondary: "#607D8B"}
+});
+
+const getLiturgicalDay = async (date = new Date()) => {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return await request.get(`${URLs.LiturgicalDay}/${year}/${month}/${day}`);
+};
+
+const getHeaderScheme = (liturgicalDay) => {
+
+    const {date, season, season_week, celebrations, weekday} = liturgicalDay;
+
+    const whiteDates = ["02-02", "06-24", "08-06", "09-14", "11-01", "11-09"];
+    if (whiteDates.some((whiteDate) => date.endsWith(whiteDate))) {
+        return "White";
     }
+
+    const celebrationNames = celebrations.map(
+        (celebration) => celebration.title
+    );
+    if (celebrationNames.includes("Pentecost")) {
+        return "Red";
+    }
+    if (celebrationNames.includes("Trinity Sunday")) {
+        return "White";
+    }
+
+    if (season === "lent") {
+        return (season_week === 6) ? "Red" : "Purple";
+    }
+    if (season === "advent") {
+        return (weekday === "sunday" && season_week === 3) ? "Rose" : "Violet";
+    }
+    if (season === "christmas" || season === "easter") {
+        return "White";
+    }
+
+    return "Green";
 };
 
 function Header() {
+    const [headerScheme, setHeaderScheme] = useState("Default");
+    useComponentDidMount(
+        async () => {
+            try {
+                const liturgicalDay = await getLiturgicalDay();
+                const newHeaderScheme = getHeaderScheme(liturgicalDay);
+                setHeaderScheme(newHeaderScheme);
+            }
+            catch (error) {
+                console.error(error.message);
+            }
+        }
+    );
+    const {primary, secondary} = HeaderPalettes[headerScheme];
+    const styles = {
+        header: {
+            backgroundColor: primary,
+            backgroundImage: `radial-gradient(${primary} 25%, ${secondary})`
+        }
+    };
     return (
         <FlexBox
             component="header"
