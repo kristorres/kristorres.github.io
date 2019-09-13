@@ -76,6 +76,10 @@ function Header() {
         header: {
             backgroundColor: primary,
             backgroundImage: `radial-gradient(${primary} 25%, ${secondary})`
+        },
+        title: {
+            textTransform: "uppercase",
+            color: (headerScheme === "White") ? "black" : "white"
         }
     };
     return (
@@ -85,7 +89,11 @@ function Header() {
             justifyContent="center"
             alignItems="center"
             style={styles.header}
-        />
+        >
+            <h1 className="mdc-typography--headline1" style={styles.title}>
+                Kris Torres
+            </h1>
+        </FlexBox>
     );
 }
 
