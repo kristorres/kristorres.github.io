@@ -57,6 +57,53 @@ const getHeaderScheme = (liturgicalDay) => {
     return "Green";
 };
 
+function TypingCarousel() {
+    const style = {
+        backgroundColor: "#1F2029",
+        border: "8px solid #35404E",
+        borderRadius: 16,
+        fontFamily: "Menlo, Monaco, Consolas, 'Courier New', monospace",
+        fontSize: 32,
+        color: "white",
+        whiteSpace: "pre",
+        overflow: "scroll",
+        WebkitUserSelect: "none",
+        MozUserSelect: "none",
+        MsUserSelect: "none",
+        userSelect: "none",
+        width: 480,
+        height: 48,
+        padding: 12,
+        margin: "0 auto"
+    };
+    useComponentDidMount(
+        () => {
+            new Typed(
+                ".typing-carousel",
+                {
+                    strings: [
+                        "Hello, world!",
+                        "Kumusta, mundo!",
+                        "おはよう、世界！",
+                        "안녕, 세계!"
+                    ],
+                    typeSpeed: 250,
+                    backSpeed: 125,
+                    loop: true,
+                    showCursor: false
+                }
+            );
+        }
+    );
+    return (
+        <FlexBox
+            className="typing-carousel"
+            justifyContent="center"
+            style={style}
+        />
+    );
+}
+
 function Header() {
     const [headerScheme, setHeaderScheme] = useState("Default");
     useComponentDidMount(
@@ -93,6 +140,7 @@ function Header() {
             <h1 className="mdc-typography--headline1" style={styles.title}>
                 Kris Torres
             </h1>
+            <TypingCarousel/>
         </FlexBox>
     );
 }
