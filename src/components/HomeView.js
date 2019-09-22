@@ -57,14 +57,15 @@ const getHeaderScheme = (liturgicalDay) => {
     return "Green";
 };
 
-function TypingCarousel() {
+function TypingCarousel({dark}) {
+    const borderColor = dark ? "rgba(0, 0, 0, 0.5)" : "#F9DF9C";
     const style = {
-        backgroundColor: "#1F2029",
-        border: "8px solid #35404E",
+        backgroundColor: dark ? "rgba(0, 0, 0, 0.25)" : "#FFFCE5",
+        border: `8px solid ${borderColor}`,
         borderRadius: 16,
         fontFamily: "Menlo, Monaco, Consolas, 'Courier New', monospace",
         fontSize: 32,
-        color: "white",
+        color: dark ? "white" : "black",
         whiteSpace: "pre",
         overflow: "scroll",
         WebkitUserSelect: "none",
@@ -140,7 +141,7 @@ function Header() {
             <h1 className="mdc-typography--headline1" style={styles.title}>
                 Kris Torres
             </h1>
-            <TypingCarousel/>
+            <TypingCarousel dark={headerScheme !== "White"}/>
         </FlexBox>
     );
 }
