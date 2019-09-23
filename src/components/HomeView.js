@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import FlexBox from "./FlexBox.js";
-import {useComponentDidMount} from "../hooks.js";
+import {useComponentDidMount, useMedia} from "../hooks.js";
 import request from "../request.js";
 
 const URLs = Object.freeze({
@@ -71,6 +71,7 @@ function Avatar({width, dark}) {
 
 function TypingCarousel({dark}) {
     const borderColor = dark ? "rgba(0, 0, 0, 0.5)" : "#F9DF9C";
+    const windowWidthIsRegular = useMedia("(min-width: 600px)");
     const style = {
         backgroundColor: dark ? "rgba(0, 0, 0, 0.25)" : "#FFFCE5",
         border: `8px solid ${borderColor}`,
@@ -84,10 +85,9 @@ function TypingCarousel({dark}) {
         MozUserSelect: "none",
         MsUserSelect: "none",
         userSelect: "none",
-        width: 480,
+        width: windowWidthIsRegular ? 512 : "calc(100% - 48px)",
         height: 48,
-        padding: 12,
-        margin: "0 auto"
+        padding: 12
     };
     useComponentDidMount(
         () => {
