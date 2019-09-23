@@ -136,7 +136,8 @@ function Header() {
     const styles = {
         root: {
             backgroundColor: primary,
-            backgroundImage: `radial-gradient(${primary} 25%, ${secondary})`
+            backgroundImage: `radial-gradient(${primary} 25%, ${secondary})`,
+            padding: "48px 24px"
         },
         title: {
             textTransform: "uppercase",
