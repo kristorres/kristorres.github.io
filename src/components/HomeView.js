@@ -140,6 +140,7 @@ function Header() {
             padding: "48px 24px"
         },
         title: {
+            textAlign: "center",
             textTransform: "uppercase",
             color: colorSchemeIsDark ? "white" : "black"
         }
