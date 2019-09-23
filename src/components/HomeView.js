@@ -57,6 +57,18 @@ const getHeaderScheme = (liturgicalDay) => {
     return "Green";
 };
 
+function Avatar({width, dark}) {
+    const borderWidth = 8;
+    const borderColor = dark ? "rgba(0, 0, 0, 0.5)" : "#F9DF9C";
+    const style = {
+        border: `${borderWidth}px solid ${borderColor}`,
+        borderRadius: (width + borderWidth * 2) / 2,
+        width,
+        height: width
+    };
+    return <img style={style} src="<PUBLIC DIRECTORY>images/profile.jpg"/>;
+}
+
 function TypingCarousel({dark}) {
     const borderColor = dark ? "rgba(0, 0, 0, 0.5)" : "#F9DF9C";
     const style = {
@@ -106,28 +118,29 @@ function TypingCarousel({dark}) {
 }
 
 function Header() {
-    const [headerScheme, setHeaderScheme] = useState("Default");
+    const [colorScheme, setColorScheme] = useState("Default");
     useComponentDidMount(
         async () => {
             try {
                 const liturgicalDay = await getLiturgicalDay();
-                const newHeaderScheme = getHeaderScheme(liturgicalDay);
-                setHeaderScheme(newHeaderScheme);
+                const newColorScheme = getHeaderScheme(liturgicalDay);
+                setColorScheme(newColorScheme);
             }
             catch (error) {
                 console.error(error.message);
             }
         }
     );
-    const {primary, secondary} = HeaderPalettes[headerScheme];
+    const {primary, secondary} = HeaderPalettes[colorScheme];
+    const colorSchemeIsDark = (colorScheme !== "White");
     const styles = {
-        header: {
+        root: {
             backgroundColor: primary,
             backgroundImage: `radial-gradient(${primary} 25%, ${secondary})`
         },
         title: {
             textTransform: "uppercase",
-            color: (headerScheme === "White") ? "black" : "white"
+            color: colorSchemeIsDark ? "white" : "black"
         }
     };
     return (
@@ -136,12 +149,13 @@ function Header() {
             level={1}
             justifyContent="center"
             alignItems="center"
-            style={styles.header}
+            style={styles.root}
         >
+            <Avatar width={250} dark={colorSchemeIsDark}/>
             <h1 className="mdc-typography--headline1" style={styles.title}>
                 Kris Torres
             </h1>
-            <TypingCarousel dark={headerScheme !== "White"}/>
+            <TypingCarousel dark={colorSchemeIsDark}/>
         </FlexBox>
     );
 }

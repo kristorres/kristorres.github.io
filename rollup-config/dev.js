@@ -19,7 +19,9 @@ export default {
     },
     plugins: [
         replace({
-            "process.env.BUILD": JSON.stringify("dev")
+            "process.env.BUILD": JSON.stringify("dev"),
+            "<PUBLIC DIRECTORY>": "",
+            delimiters: ["", ""]
         }),
         alias({
             root: path.resolve(__dirname, "src")
