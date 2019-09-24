@@ -59,7 +59,7 @@ const getHeaderScheme = (liturgicalDay) => {
 
 function Avatar({width, dark}) {
     const borderWidth = 8;
-    const borderColor = dark ? "rgba(0, 0, 0, 0.5)" : "#F9DF9C";
+    const borderColor = dark ? "rgba(255, 255, 255, 0.5)" : "#F9DF9C";
     const style = {
         border: `${borderWidth}px solid ${borderColor}`,
         borderRadius: (width + borderWidth * 2) / 2,
@@ -70,7 +70,7 @@ function Avatar({width, dark}) {
 }
 
 function TypingCarousel({dark}) {
-    const borderColor = dark ? "rgba(0, 0, 0, 0.5)" : "#F9DF9C";
+    const borderColor = dark ? "rgba(255, 255, 255, 0.5)" : "#F9DF9C";
     const windowWidthIsRegular = useMedia("(min-width: 600px)");
     const style = {
         backgroundColor: dark ? "rgba(0, 0, 0, 0.25)" : "#FFFCE5",
