@@ -1,7 +1,7 @@
 {
   "name": "kristorres.github.io",
   "description": "Kris Torres’s website.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material/elevation": "^3.1.0",
