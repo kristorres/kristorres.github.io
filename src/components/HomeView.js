@@ -162,10 +162,42 @@ function Header() {
     );
 }
 
+function AboutMeSection() {
+    const styles = {
+        root: {
+            backgroundColor: "#DBE8FB",
+            padding: 48
+        },
+        headline: {
+            textAlign: "center",
+            color: "black"
+        },
+        paragraph: {
+            fontSize: 20,
+            lineHeight: "2rem",
+            color: "black"
+        }
+    };
+    return (
+        <FlexBox component="article" level={1} style={styles.root}>
+            <h2 className="mdc-typography--headline2" style={styles.headline}>
+                About Me
+            </h2>
+            <p className="mdc-typography--body1" style={styles.paragraph}>
+                <b>Hello, world!</b> I am currently an app developer on the
+                Internal App team at Skechers. I focus on building internal apps
+                for sales reps and key people in Customer Service. My goal is to
+                be a full-time iOS developer and/or work at Apple!
+            </p>
+        </FlexBox>
+    );
+}
+
 function HomeView() {
     return (
         <FlexBox component="main" level={1} className="mdc-theme--background">
             <Header/>
+            <AboutMeSection/>
         </FlexBox>
     );
 }
