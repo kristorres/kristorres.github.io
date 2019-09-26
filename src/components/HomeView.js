@@ -169,8 +169,7 @@ function AboutMeSection() {
             padding: 48
         },
         headline: {
-            textAlign: "center",
-            color: "black"
+            textAlign: "center"
         },
         paragraph: {
             fontSize: 20,
@@ -178,9 +177,10 @@ function AboutMeSection() {
             color: "black"
         }
     };
+    const headlineClassName = "mdc-typography--headline2 mdc-theme--primary";
     return (
         <FlexBox component="article" level={1} style={styles.root}>
-            <h2 className="mdc-typography--headline2" style={styles.headline}>
+            <h2 className={headlineClassName} style={styles.headline}>
                 About Me
             </h2>
             <p className="mdc-typography--body1" style={styles.paragraph}>
