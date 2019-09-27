@@ -57,6 +57,14 @@ const getHeaderScheme = (liturgicalDay) => {
     return "Green";
 };
 
+const headlineClassName = (level, isPrimary = true) => {
+    let className = `mdc-typography--headline${level}`;
+    if (isPrimary) {
+        className += " mdc-theme--primary";
+    }
+    return className;
+};
+
 function Avatar({width, dark}) {
     const borderWidth = 8;
     const borderColor = dark ? "rgba(255, 255, 255, 0.5)" : "#F9DF9C";
@@ -154,7 +162,7 @@ function Header() {
             style={styles.root}
         >
             <Avatar width={250} dark={colorSchemeIsDark}/>
-            <h1 className="mdc-typography--headline1" style={styles.title}>
+            <h1 className={headlineClassName(1, false)} style={styles.title}>
                 Kris Torres
             </h1>
             <TypingCarousel dark={colorSchemeIsDark}/>
@@ -177,10 +185,9 @@ function AboutMeSection() {
             color: "black"
         }
     };
-    const headlineClassName = "mdc-typography--headline2 mdc-theme--primary";
     return (
         <FlexBox component="article" level={1} style={styles.root}>
-            <h2 className={headlineClassName} style={styles.headline}>
+            <h2 className={headlineClassName(2)} style={styles.headline}>
                 About Me
             </h2>
             <p className="mdc-typography--body1" style={styles.paragraph}>
@@ -193,11 +200,78 @@ function AboutMeSection() {
     );
 }
 
+function NowSection() {
+    const windowWidthIsRegular = useMedia("(min-width: 600px)");
+    const styles = {
+        root: {
+            backgroundColor: "#FFFCF4",
+            padding: 48
+        },
+        headline: {
+            textAlign: "center"
+        },
+        subheadline: {
+            margin: "1rem 0"
+        },
+        paragraph: {
+            color: "black"
+        },
+        subview: {
+            padding: 16
+        },
+        logo: {
+            width: "100%",
+            height: "auto"
+        }
+    };
+    const companyURL = "https://www.skechers.com/assets/images/logo.png";
+    return (
+        <FlexBox component="section" level={1} style={styles.root}>
+            <h2 className={headlineClassName(2)} style={styles.headline}>
+                Now
+            </h2>
+            <FlexBox direction={windowWidthIsRegular ? "row" : "column"}>
+                <FlexBox
+                    level={1}
+                    justifyContent="center"
+                    alignItems="center"
+                    style={styles.subview}
+                >
+                    <a href="https://www.skechers.com">
+                        <img style={styles.logo} src={companyURL}/>
+                    </a>
+                </FlexBox>
+                <FlexBox
+                    level={1}
+                    justifyContent="center"
+                    alignItems="flex-start"
+                    style={styles.subview}
+                >
+                    <h3
+                        className={headlineClassName(4)}
+                        style={styles.subheadline}
+                    >
+                        Skechers USA, Inc.
+                    </h3>
+                    <p
+                        className="mdc-typography--body1"
+                        style={styles.paragraph}
+                    >
+                        Building internal apps that automate workflows for sales
+                        reps and key people in Customer Service.
+                    </p>
+                </FlexBox>
+            </FlexBox>
+        </FlexBox>
+    );
+}
+
 function HomeView() {
     return (
         <FlexBox component="main" level={1} className="mdc-theme--background">
             <Header/>
             <AboutMeSection/>
+            <NowSection/>
         </FlexBox>
     );
 }
