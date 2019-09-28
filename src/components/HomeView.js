@@ -266,12 +266,52 @@ function NowSection() {
     );
 }
 
+function TechnicalSkillsSection() {
+    const styles = {
+        root: {
+            backgroundColor: "#DBE8FB",
+            padding: 48
+        },
+        headline: {
+            textAlign: "center"
+        },
+        listItem: {
+            color: "black"
+        }
+    };
+    const listItemClassName = "mdc-typography--body1";
+    return (
+        <FlexBox component="section" level={1} style={styles.root}>
+            <h2 className={headlineClassName(2)} style={styles.headline}>
+                Technical Skills
+            </h2>
+            <FlexBox justifyContent="center" alignItems="center">
+                <ul>
+                    <li className={listItemClassName} style={styles.listItem}>
+                        Swift (iOS)
+                    </li>
+                    <li className={listItemClassName} style={styles.listItem}>
+                        JavaScript (React & React Native)
+                    </li>
+                    <li className={listItemClassName} style={styles.listItem}>
+                        Scala (Play Framework & Akka)
+                    </li>
+                    <li className={listItemClassName} style={styles.listItem}>
+                        C++ (Qt)
+                    </li>
+                </ul>
+            </FlexBox>
+        </FlexBox>
+    );
+}
+
 function HomeView() {
     return (
         <FlexBox component="main" level={1} className="mdc-theme--background">
             <Header/>
             <AboutMeSection/>
             <NowSection/>
+            <TechnicalSkillsSection/>
         </FlexBox>
     );
 }
