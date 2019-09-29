@@ -107,7 +107,10 @@
         }],
         "react/prefer-stateless-function": "error",
         "react/prop-types": ["error", { "skipUndeclared": true }],
-        "react/self-closing-comp": ["error", { "component": true }],
+        "react/self-closing-comp": ["error", {
+            "component": true,
+            "html": false
+        }],
         "semi": ["error", "always"],
         "semi-spacing": ["error", { "before": false, "after": true }],
         "semi-style": ["error", "last"],

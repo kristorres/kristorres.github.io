@@ -305,6 +305,53 @@ function TechnicalSkillsSection() {
     );
 }
 
+function HobbiesSection() {
+    const styles = {
+        root: {
+            backgroundColor: "#FFFCF4",
+            padding: 48
+        },
+        headline: {
+            textAlign: "center"
+        },
+        paragraph: {
+            color: "black"
+        },
+        video: {
+            borderStyle: "none"
+        }
+    };
+    const videoFeatures = [
+        "accelerometer",
+        "autoplay",
+        "encrypted-media",
+        "gyroscope",
+        "picture-in-picture"
+    ];
+    return (
+        <FlexBox component="section" level={1} style={styles.root}>
+            <h2 className={headlineClassName(2)} style={styles.headline}>
+                Hobbies
+            </h2>
+            <FlexBox justifyContent="center" alignItems="center">
+                <p className="mdc-typography--body1" style={styles.paragraph}>
+                    I did piano covers of Linkin Park songs. Check out
+                    my <i>Transformers</i> medley below. Enjoy! 🙂
+                </p>
+                <iframe
+                    style={styles.video}
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/tzspB34ui-Y"
+                    allow={videoFeatures.join("; ")}
+                    allowFullScreen
+                >
+                </iframe>
+            </FlexBox>
+        </FlexBox>
+    );
+}
+
 function HomeView() {
     return (
         <FlexBox component="main" level={1} className="mdc-theme--background">
@@ -312,6 +359,7 @@ function HomeView() {
             <AboutMeSection/>
             <NowSection/>
             <TechnicalSkillsSection/>
+            <HobbiesSection/>
         </FlexBox>
     );
 }
