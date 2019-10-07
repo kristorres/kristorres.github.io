@@ -9,7 +9,8 @@
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "Typed": "readonly"
     },
     "parserOptions": {
         "ecmaFeatures": {
@@ -24,7 +25,6 @@
     "rules": {
         "array-bracket-spacing": ["error", "never"],
         "array-callback-return": "error",
-        "arrow-body-style": ["error", "as-needed"],
         "arrow-parens": ["error", "always"],
         "arrow-spacing": ["error", { "before": true, "after": true }],
         "block-spacing": ["error", "always"],
@@ -39,17 +39,20 @@
         "func-call-spacing": ["error", "never"],
         "function-paren-newline": ["error", "multiline-arguments"],
         "indent": ["error", 4],
-        "key-spacing": ["error", {"beforeColon": false, "afterColon": true}],
+        "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
         "keyword-spacing": ["error", { "after": true }],
         "max-len": ["error", { "code": 80 }],
         "max-statements-per-line": ["error", { "max": 1 }],
         "no-array-constructor": "error",
         "no-case-declarations": "error",
-        "no-console": "error",
+        "no-console": ["error", { "allow": ["warn", "error"] }],
         "no-duplicate-imports": "error",
         "no-eval": "error",
         "no-loop-func": "error",
-        "no-mixed-operators": ["error", { "allowSamePrecedence": true }],
+        "no-mixed-operators": ["error", {
+            "groups": [["&&", "||"]],
+            "allowSamePrecedence": true
+        }],
         "no-multi-assign": "error",
         "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
         "no-multiple-empty-lines": ["error", { "max": 1 }],
@@ -103,8 +106,11 @@
             "arrow": "parens-new-line"
         }],
         "react/prefer-stateless-function": "error",
-        "react/prop-types": "error",
-        "react/self-closing-comp": ["error", { "component": true }],
+        "react/prop-types": ["error", { "skipUndeclared": true }],
+        "react/self-closing-comp": ["error", {
+            "component": true,
+            "html": false
+        }],
         "semi": ["error", "always"],
         "semi-spacing": ["error", { "before": false, "after": true }],
         "semi-style": ["error", "last"],

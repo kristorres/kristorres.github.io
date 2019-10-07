@@ -1,0 +1,17 @@
+{
+    "jobs": [
+        {
+            "company": "Skechers USA, Inc.",
+            "websiteURL": "https://www.skechers.com",
+            "logoURL": "https://www.skechers.com/assets/images/logo.png",
+            "summary": "Building internal apps that automate workflows for sales reps and key people in Customer Service."
+        }
+    ],
+    "projects": [],
+    "programmingLanguages": [
+        "Swift (iOS)",
+        "JavaScript (React & React Native)",
+        "Scala (Play Framework & Akka)",
+        "C++ (Qt)"
+    ]
+}
