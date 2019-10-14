@@ -9,7 +9,7 @@ const Domains = Object.freeze({
 
 const ImageURLs = Object.freeze({
     Avatar: `${Domains.Images}/profile.jpg`,
-    Header: `${Domains.Images}/banners/jumbotron.png`
+    Header: `${Domains.Images}/banners/slytherin_night_sky.jpg`
 });
 
 const Colors = Object.freeze({
@@ -79,7 +79,7 @@ function TypingCarousel() {
 function Header() {
     const styles = {
         root: {
-            backgroundColor: "#0C1C33",
+            backgroundColor: "#0C3E36",
             backgroundImage: `url("${ImageURLs.Header}")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
