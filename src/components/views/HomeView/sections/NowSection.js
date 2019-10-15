@@ -29,7 +29,7 @@ function JobView({job, flexDirection}) {
             <FlexBox
                 level={1}
                 justifyContent="center"
-                alignItems="center"
+                alignItems={(flexDirection === "row") ? "flex-end" : "center"}
                 style={styles.subview}
             >
                 <a href={job.websiteURL}>
