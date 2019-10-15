@@ -1,90 +1,43 @@
-import React, {useState} from "react";
+import React from "react";
 
 import FlexBox from "../../FlexBox.js";
 import {useComponentDidMount, useMedia} from "../../../hooks.js";
-import request from "../../../request.js";
 
-const calendarURL = "http://calapi.inadiutorium.cz/api/v0/en/calendars/default";
-
-const HeaderPalettes = Object.freeze({
-    Green: {primary: "#087F23", secondary: "#4CAF50"},
-    Violet: {primary: "#320B86", secondary: "#673AB7"},
-    Purple: {primary: "#6A0080", secondary: "#9C27B0"},
-    Rose: {primary: "#FF80AB", secondary: "#FFB2DD"},
-    Red: {primary: "#BA000D", secondary: "#F44336"},
-    White: {primary: "white", secondary: "yellow"},
-    Default: {primary: "#34515E", secondary: "#607D8B"}
+const Domains = Object.freeze({
+    Images: "<PUBLIC DIRECTORY>images"
 });
 
-const getLiturgicalDay = async (date = new Date()) => {
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    return await request.get(`${calendarURL}/${year}/${month}/${day}`);
-};
+const ImageURLs = Object.freeze({
+    Avatar: `${Domains.Images}/profile.jpg`,
+    Header: `${Domains.Images}/banners/slytherin_night_sky.jpg`
+});
 
-const getColorSchemeForHeader = (liturgicalDay) => {
+const Colors = Object.freeze({
+    Border: "rgba(255, 255, 255, 0.5)",
+    Text: "white"
+});
 
-    const {date, season, season_week, celebrations, weekday} = liturgicalDay;
-
-    const whiteDates = ["02-02", "06-24", "08-06", "09-14", "11-01", "11-09"];
-    for (const whiteDate of whiteDates) {
-        if (date.endsWith(whiteDate)) {
-            return "White";
-        }
-    }
-
-    const celebrationNames = celebrations.map(
-        (celebration) => celebration.title
-    );
-    if (celebrationNames.includes("Pentecost")) {
-        return "Red";
-    }
-    if (celebrationNames.includes("Trinity Sunday")) {
-        return "White";
-    }
-
-    if (season === "lent") {
-        return (season_week === 6) ? "Red" : "Purple";
-    }
-    if (season === "advent") {
-        return (weekday === "sunday" && season_week === 3) ? "Rose" : "Violet";
-    }
-    if (season === "christmas" || season === "easter") {
-        return "White";
-    }
-
-    return "Green";
-};
-
-const getBorderColor = (colorScheme) => {
-    return (colorScheme === "White") ? "#F9DF9C" : "rgba(255, 255, 255, 0.5)";
-};
-
-function Avatar({colorScheme}) {
+function Avatar() {
     const imageWidth = 250;
     const borderWidth = 8;
-    const borderColor = getBorderColor(colorScheme);
     const style = {
-        border: `${borderWidth}px solid ${borderColor}`,
+        border: `${borderWidth}px solid ${Colors.Border}`,
         borderRadius: (imageWidth + borderWidth * 2) / 2,
         width: imageWidth,
         height: imageWidth
     };
-    return <img style={style} src="<PUBLIC DIRECTORY>images/profile.jpg"/>;
+    return <img style={style} src={ImageURLs.Avatar}/>;
 }
 
-function TypingCarousel({colorScheme}) {
-    const borderColor = getBorderColor(colorScheme);
+function TypingCarousel() {
     const windowWidthIsAtLeastSmall = useMedia("(min-width: 600px)");
-    const colorSchemeIsWhite = (colorScheme === "White");
     const style = {
-        backgroundColor: colorSchemeIsWhite ? "#FFFCE5" : "rgba(0, 0, 0, 0.25)",
-        border: `8px solid ${borderColor}`,
+        backgroundColor: "rgba(0, 0, 0, 0.25)",
+        border: `8px solid ${Colors.Border}`,
         borderRadius: 16,
         fontFamily: "Menlo, Monaco, Consolas, 'Courier New', monospace",
         fontSize: 32,
-        color: colorSchemeIsWhite ? "black" : "white",
+        color: Colors.Text,
         whiteSpace: "pre",
         overflow: "scroll",
         WebkitUserSelect: "none",
@@ -124,30 +77,18 @@ function TypingCarousel({colorScheme}) {
 }
 
 function Header() {
-    const [colorScheme, setColorScheme] = useState("Default");
-    useComponentDidMount(
-        async () => {
-            try {
-                const liturgicalDay = await getLiturgicalDay();
-                const newColorScheme = getColorSchemeForHeader(liturgicalDay);
-                setColorScheme(newColorScheme);
-            }
-            catch (error) {
-                console.error(error.message);
-            }
-        }
-    );
-    const {primary, secondary} = HeaderPalettes[colorScheme];
     const styles = {
         root: {
-            backgroundColor: primary,
-            backgroundImage: `radial-gradient(${primary} 25%, ${secondary})`,
+            backgroundColor: "#0C3E36",
+            backgroundImage: `url("${ImageURLs.Header}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             padding: "48px 24px"
         },
         title: {
             textAlign: "center",
             textTransform: "uppercase",
-            color: (colorScheme === "White") ? "black" : "white"
+            color: Colors.Text
         }
     };
     return (
@@ -158,11 +99,11 @@ function Header() {
             alignItems="center"
             style={styles.root}
         >
-            <Avatar colorScheme={colorScheme}/>
+            <Avatar/>
             <h1 className="mdc-typography--headline1" style={styles.title}>
                 Kris Torres
             </h1>
-            <TypingCarousel colorScheme={colorScheme}/>
+            <TypingCarousel/>
         </FlexBox>
     );
 }
