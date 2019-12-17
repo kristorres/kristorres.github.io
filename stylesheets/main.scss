@@ -38,6 +38,11 @@ a:active {
     position: static;
 }
 
+.mdc-top-app-bar a {
+    color: $mdc-theme-on-primary;
+    text-decoration: none;
+}
+
 footer {
     @include mdc-elevation(2);
     padding: 24px;
