@@ -11,7 +11,9 @@ function NavigationBar() {
             <div className="mdc-top-app-bar__row">
                 <section className={itemAlignmentClassName("align-start")}>
                     <span className="mdc-top-app-bar__title">
-                        kristorres.github.io
+                        <a href="https://kristorres.github.io">
+                            kristorres.github.io
+                        </a>
                     </span>
                 </section>
             </div>
