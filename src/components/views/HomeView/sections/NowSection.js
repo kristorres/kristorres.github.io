@@ -1,65 +1,86 @@
 import React from "react";
 
 import Section from "../Section.js";
-import FlexBox from "../../../FlexBox.js";
-import {useMedia} from "../../../../hooks.js";
 import {jobs} from "../../../../data/profile.json";
 
-const styles = {
-    subheadline: {
-        margin: "1rem 0"
-    },
-    subview: {
-        padding: 16
-    },
-    paragraph: {
-        color: "black"
-    },
-    logo: {
-        maxWidth: "100%",
-        height: "auto"
-    }
+const gridTemplateAreas = (props) => {
+    return (props.logoPosition === "left")
+        ? `"logo logo logo logo logo info info info info info info info"`
+        : `"info info info info info info info logo logo logo logo logo"`;
 };
 
-const subheadlineClassName = "mdc-typography--headline4 mdc-theme--primary";
+const JobWrapper = styled.div`
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+        "logo logo logo logo logo logo logo logo logo logo logo logo"
+        "info info info info info info info info info info info info"
+    ;
+    grid-gap: 16px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 48px auto;
+    @media (min-width: 960px) {
+        grid-template-areas: ${gridTemplateAreas};
+    }
+`;
 
-function JobView({job, flexDirection}) {
+const LogoView = styled.div`
+    grid-area: logo;
+    justify-self: center;
+    padding: 32px 16px;
+`;
+
+const InfoView = styled.div`
+    grid-area: info;
+    justify-self: start;
+    padding: 16px;
+`;
+
+const Logo = styled.img`
+    max-width: 100%;
+`;
+
+const Headline = styled.h3`
+    font-family: Oswald, HelveticaNeue-CondensedBold, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    color: #1A64D7;
+    margin: 0 0 1em;
+`;
+
+const Paragraph = styled.p`
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    color: black;
+`;
+
+function JobView({job, logoPosition}) {
     return (
-        <FlexBox direction={flexDirection}>
-            <FlexBox
-                level={1}
-                justifyContent="center"
-                alignItems={(flexDirection === "row") ? "flex-end" : "center"}
-                style={styles.subview}
-            >
+        <JobWrapper logoPosition={logoPosition}>
+            <LogoView>
                 <a href={job.websiteURL}>
-                    <img style={styles.logo} src={job.logoURL}/>
+                    <Logo src={job.logoURL}/>
                 </a>
-            </FlexBox>
-            <FlexBox
-                level={1}
-                justifyContent="center"
-                alignItems="flex-start"
-                style={styles.subview}
-            >
-                <h3 className={subheadlineClassName} style={styles.subheadline}>
-                    {job.company}
-                </h3>
-                <p className="mdc-typography--body1" style={styles.paragraph}>
-                    {job.summary}
-                </p>
-            </FlexBox>
-        </FlexBox>
+            </LogoView>
+            <InfoView>
+                <Headline>{job.company}</Headline>
+                <Paragraph>{job.summary}</Paragraph>
+            </InfoView>
+        </JobWrapper>
     );
 }
 
 function NowSection() {
-    const windowWidthIsAtLeastSmall = useMedia("(min-width: 600px)");
-    const flexDirection = windowWidthIsAtLeastSmall ? "row" : "column";
     const jobViews = jobs.map(
         (job, index) => {
             const key = index.toString();
-            return <JobView key={key} job={job} flexDirection={flexDirection}/>;
+            const logoPosition = (index % 2 === 0) ? "left" : "right";
+            return <JobView key={key} job={job} logoPosition={logoPosition}/>;
         }
     );
     return (

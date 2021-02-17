@@ -4,7 +4,7 @@
             "company": "Skechers USA, Inc.",
             "websiteURL": "https://www.skechers.com",
             "logoURL": "https://www.skechers.com/assets/images/logo.png",
-            "summary": "Building internal apps that automate workflows for sales reps and key people in Customer Service."
+            "summary": "Designing and building the UI of an enterprise mobile app in React Native; the app is used at on-site events to streamline payroll deduction purchases of our work shoes. Also building UIs (React) and server-side logic (Scala/Play) of various internal web apps that automate workflows for sales analysts and key people in customer service."
         }
     ],
     "projects": [],
