@@ -4,16 +4,19 @@ import Header from "./Header.js";
 import AboutMeSection from "./sections/AboutMeSection.js";
 import NowSection from "./sections/NowSection.js";
 import TechnicalSkillsSection from "./sections/TechnicalSkillsSection.js";
-import FlexBox from "../../FlexBox.js";
+
+const Wrapper = styled.main`
+    background-color: #D1F4FF;
+`;
 
 function HomeView() {
     return (
-        <FlexBox component="main" level={1} className="mdc-theme--background">
+        <Wrapper>
             <Header/>
             <AboutMeSection/>
             <NowSection/>
             <TechnicalSkillsSection/>
-        </FlexBox>
+        </Wrapper>
     );
 }
 

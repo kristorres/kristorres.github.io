@@ -1,26 +1,25 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import FlexBox from "../../FlexBox.js";
+const Wrapper = styled.section`
+    padding: 96px 48px;
+`;
 
-const styles = {
-    root: {
-        backgroundColor: "#D1F4FF",
-        padding: "96px 48px"
-    },
-    headline: {
-        textAlign: "center"
-    }
-};
-
-const titleClassName = "mdc-typography--headline2 mdc-theme--primary";
+const Headline = styled.h2`
+    font-family: Oswald, HelveticaNeue-CondensedBold, sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #1A64D7;
+`;
 
 function Section({title, children}) {
     return (
-        <FlexBox component="section" level={1} style={styles.root}>
-            <h2 className={titleClassName} style={styles.headline}>{title}</h2>
+        <Wrapper>
+            <Headline>{title}</Headline>
             {children}
-        </FlexBox>
+        </Wrapper>
     );
 }
 
