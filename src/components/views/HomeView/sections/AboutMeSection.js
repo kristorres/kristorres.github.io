@@ -2,23 +2,31 @@ import React from "react";
 
 import Section from "../Section.js";
 
-const styles = {
-    paragraph: {
-        fontSize: 20,
-        lineHeight: "2rem",
-        color: "black"
-    }
-};
+const Container = styled.div`
+    max-width: 720px;
+    margin: 0 auto;
+`;
+
+const Paragraph = styled.p`
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    color: black;
+`;
 
 function AboutMeSection() {
     return (
         <Section title="About Me">
-            <p className="mdc-typography--body1" style={styles.paragraph}>
-                <b>Hello, world!</b> I am currently an app developer on the
-                Internal App team at Skechers. I focus on building internal apps
-                for sales reps and key people in Customer Service. My goal is to
-                be a full-time iOS developer and/or work at Apple!
-            </p>
+            <Container>
+                <Paragraph>
+                    <b>Hello, world!</b> I am currently an app developer at
+                    Skechers. I focus on building internal apps for sales reps
+                    and key people in customer service. My goal is to be a
+                    full-time iOS developer and/or work at Apple!
+                </Paragraph>
+            </Container>
         </Section>
     );
 }
