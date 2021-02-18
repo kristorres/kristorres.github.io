@@ -7,7 +7,35 @@
             "summary": "Designing and building the UI of an enterprise mobile app in React Native; the app is used at on-site events to streamline payroll deduction purchases of our work shoes. Also building UIs (React) and server-side logic (Scala/Play) of various internal web apps that automate workflows for sales analysts and key people in customer service."
         }
     ],
-    "projects": [],
+    "projects": [
+        {
+            "name": "Tensai",
+            "repositoryURL": "https://github.com/kristorres/tensai",
+            "screenshotURL": "https://github.com/kristorres/tensai/raw/develop/Screenshots/trivia_quiz.png",
+            "summary": "I am the sole iOS developer for Tensai, which is a trivia app. Tensai generates a quiz of random trivia questions for the player to answer. The app is still in development.",
+            "role": "Sole iOS developer.",
+            "technologies": [
+                "Swift",
+                "SwiftUI",
+                "Networking",
+                "UserDefaults"
+            ]
+        },
+        {
+            "name": "React Partitions",
+            "url": "https://kristorres.github.io/react-partitions",
+            "repositoryURL": "https://github.com/kristorres/react-partitions",
+            "screenshotURL": "https://github.com/kristorres/react-partitions/raw/develop/resources/sylvester-glaisher_bijection.gif",
+            "summary": "I am the sole developer for React Partitions, which is an interactive web app where users can animate bijections of integer partitions with Ferrers diagrams.",
+            "role": "Sole web app developer.",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "Canvas Animations",
+                "Math"
+            ]
+        }
+    ],
     "programmingLanguages": [
         "Swift (iOS)",
         "JavaScript (React & React Native)",

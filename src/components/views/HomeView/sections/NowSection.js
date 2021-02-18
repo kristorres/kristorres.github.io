@@ -9,7 +9,7 @@ const gridTemplateAreas = (props) => {
         : `"info info info info info info info logo logo logo logo logo"`;
 };
 
-const JobWrapper = styled.div`
+const JobContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
@@ -61,7 +61,7 @@ const Paragraph = styled.p`
 
 function JobView({job, logoPosition}) {
     return (
-        <JobWrapper logoPosition={logoPosition}>
+        <JobContainer logoPosition={logoPosition}>
             <LogoView>
                 <a href={job.websiteURL}>
                     <Logo src={job.logoURL}/>
@@ -71,7 +71,7 @@ function JobView({job, logoPosition}) {
                 <Headline>{job.company}</Headline>
                 <Paragraph>{job.summary}</Paragraph>
             </InfoView>
-        </JobWrapper>
+        </JobContainer>
     );
 }
 
