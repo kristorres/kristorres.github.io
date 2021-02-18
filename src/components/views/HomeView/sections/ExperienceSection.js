@@ -1,7 +1,7 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import Section from "../Section.js";
-import {projects} from "../../../../data/profile.json";
 
 const gridTemplateAreas = (props) => {
     return (props.imagePosition === "left")
@@ -9,7 +9,7 @@ const gridTemplateAreas = (props) => {
         : `"info info info info info info info image image image image image"`;
 };
 
-const ProjectContainer = styled.div`
+const ItemContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
@@ -25,21 +25,21 @@ const ProjectContainer = styled.div`
     }
 `;
 
-const ScreenshotView = styled.div`
+const ImageView = styled.div`
     grid-area: image;
     justify-self: center;
     padding: 32px 16px;
+`;
+
+const Image = styled.img`
+    max-width: 100%;
+    max-height: 600px;
 `;
 
 const InfoView = styled.div`
     grid-area: info;
     justify-self: start;
     padding: 16px;
-`;
-
-const Screenshot = styled.img`
-    max-width: 100%;
-    max-height: 600px;
 `;
 
 const Headline = styled.h3`
@@ -88,51 +88,79 @@ const Link = styled.a`
     }
 `;
 
-function ProjectView({project, imagePosition}) {
-    const screenshot = (project.url === undefined)
-        ? <Screenshot src={project.screenshotURL}/>
+function Item({info, imagePosition}) {
+    const {
+        name,
+        url,
+        imageURL,
+        summary,
+        role,
+        technologies,
+        repositoryURL
+    } = info;
+
+    const image = (url === undefined)
+        ? <Image src={imageURL}/>
         : (
-            <a href={project.url}>
-                <Screenshot src={project.screenshotURL}/>
+            <a href={url}>
+                <Image src={imageURL}/>
             </a>
         );
+    
     return (
-        <ProjectContainer imagePosition={imagePosition}>
-            <ScreenshotView>
-                {screenshot}
-            </ScreenshotView>
+        <ItemContainer imagePosition={imagePosition}>
+            <ImageView>
+                {image}
+            </ImageView>
             <InfoView>
-                <Headline>{project.name}</Headline>
-                <Paragraph>{project.summary}</Paragraph>
-                <Subheadline>My Role:</Subheadline>
-                <Paragraph>{project.role}</Paragraph>
-                <Subheadline>Technologies:</Subheadline>
-                <Paragraph>{project.technologies.join(", ")}</Paragraph>
-                <Link href={project.repositoryURL}>GitHub</Link>
+                <Headline>{name}</Headline>
+                <Paragraph>{summary}</Paragraph>
+                {role && <React.Fragment>
+                    <Subheadline>My Role:</Subheadline>
+                    <Paragraph>{role}</Paragraph>
+                </React.Fragment>
+                }
+                {technologies?.length > 0 && <React.Fragment>
+                    <Subheadline>Technologies:</Subheadline>
+                    <Paragraph>{technologies.join(", ")}</Paragraph>
+                </React.Fragment>
+                }
+                {repositoryURL && <Link href={repositoryURL}>GitHub</Link>}
             </InfoView>
-        </ProjectContainer>
+        </ItemContainer>
     );
 }
 
-function ProjectsSection() {
-    const projectViews = projects.map(
-        (project, index) => {
+function ExperienceSection({title, items}) {
+    const itemViews = items.map(
+        (item, index) => {
             const key = index.toString();
             const imagePosition = (index % 2 === 0) ? "left" : "right";
             return (
-                <ProjectView
-                    key={key}
-                    project={project}
-                    imagePosition={imagePosition}
-                />
+                <Item key={key} info={item} imagePosition={imagePosition}/>
             );
         }
     );
     return (
-        <Section title="Projects">
-            {projectViews}
+        <Section title={title}>
+            {itemViews}
         </Section>
     );
 }
 
-export default ProjectsSection;
+ExperienceSection.propTypes = {
+    title: PropTypes.string.isRequired,
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            url: PropTypes.string,
+            imageURL: PropTypes.string.isRequired,
+            summary: PropTypes.string.isRequired,
+            role: PropTypes.string,
+            technologies: PropTypes.arrayOf(PropTypes.string),
+            repositoryURL: PropTypes.string
+        })
+    ).isRequired
+};
+
+export default ExperienceSection;
