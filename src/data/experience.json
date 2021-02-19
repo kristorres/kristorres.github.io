@@ -35,11 +35,5 @@
             ],
             "repositoryURL": "https://github.com/kristorres/react-partitions"
         }
-    ],
-    "programmingLanguages": [
-        "Swift (iOS)",
-        "JavaScript (React & React Native)",
-        "Scala (Play Framework & Akka)",
-        "C++ (Qt)"
     ]
 }
