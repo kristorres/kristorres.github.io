@@ -1,13 +1,6 @@
 <script>
     import Section from "../section.svelte";
-
-    const videoFeatures = [
-        "accelerometer",
-        "autoplay",
-        "encrypted-media",
-        "gyroscope",
-        "picture-in-picture"
-    ];
+    import Video from "../video.svelte";
 </script>
 
 <style>
@@ -23,20 +16,6 @@
         line-height: 1.5;
         color: black;
     }
-    div > .video-container {
-        position: relative;
-        overflow: hidden;
-        max-width: 100%;
-        height: 0;
-        padding-bottom: 56.25%;
-    }
-    div > .video-container > .video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
 </style>
 
 <Section title="Hobbies">
@@ -45,15 +24,9 @@
             I did piano covers of Linkin Park songs. Check out my
             <i>Transformers</i> medley below. Enjoy! 🙂
         </p>
-        <div class="video-container">
-            <iframe
-                class="video"
-                src="https://www.youtube.com/embed/tzspB34ui-Y"
-                title="LINKIN PARK — What I’ve Done/New Divide/Iridescent [Piano Cover Compilation]"
-                frameborder="0"
-                allow="{videoFeatures.join("; ")}"
-                allowfullscreen
-            ></iframe>
-        </div>
+        <Video
+            name="LINKIN PARK — What I’ve Done/New Divide/Iridescent [Piano Cover Compilation]"
+            url="https://www.youtube.com/embed/tzspB34ui-Y"
+        />
     </div>
 </Section>
