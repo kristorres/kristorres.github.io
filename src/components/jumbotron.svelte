@@ -25,7 +25,7 @@
 <style>
     header {
         background-color: #0C3E36;
-        background-image: url("images/banners/slytherin_night_sky.jpg");
+        background-image: url("/images/banners/slytherin_night_sky.jpg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -74,7 +74,7 @@
 </style>
 
 <header>
-    <img class="avatar" src="images/profile.jpg" alt="Kris Torres"/>
+    <img class="avatar" src="/images/profile.jpg" alt="Kris Torres"/>
     <h1>Kris Torres</h1>
     <div class="typing-carousel"></div>
 </header>
