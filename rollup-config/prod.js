@@ -6,6 +6,7 @@ import commonJS from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
+import svelte from "rollup-plugin-svelte";
 import {terser} from "rollup-plugin-terser";
 
 export default {
@@ -39,6 +40,9 @@ export default {
         }),
         json({
             include: "src/**/*.json"
+        }),
+        svelte({
+            emitCss: false
         }),
         resolve(),
         commonJS(),

@@ -7,7 +7,8 @@
     "@material/elevation": "^4.0.0",
     "@material/theme": "^4.0.0",
     "@material/top-app-bar": "^4.0.0",
-    "@material/typography": "^4.0.0"
+    "@material/typography": "^4.0.0",
+    "svelte": "^3.32.3"
   },
   "devDependencies": {
     "@axel669/rollup-plugin-path-alias": "^1.1.0",
@@ -24,13 +25,12 @@
     "eslint-plugin-react": "^7.20.6",
     "node-sass": "^4.14.1",
     "rollup": "^2.26.11",
+    "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
-    "build-dev": "npm run sass-dev && rollup -c ./rollup-config/dev.js",
-    "build-prod": "npm run sass-prod && rollup -c ./rollup-config/prod.js",
-    "sass-dev": "node-sass --include-path ./node_modules/ ./stylesheets/main.scss > ./build/dev/main.css",
-    "sass-prod": "node-sass --include-path ./node_modules/ ./stylesheets/main.scss > ./build/prod/main.min.css --output-style compressed",
+    "build-dev": "rollup -c ./rollup-config/dev.js",
+    "build-prod": "rollup -c ./rollup-config/prod.js",
     "lint": "eslint ./src/"
   },
   "author": {
