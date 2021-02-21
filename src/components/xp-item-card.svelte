@@ -49,17 +49,17 @@
         padding: 16px;
     }
     .card > .info-container > h3 {
-        font-family: Oswald, HelveticaNeue-CondensedBold, sans-serif;
+        font-family: "Lilita One", HelveticaNeue-CondensedBold, sans-serif;
         font-size: 36px;
-        font-weight: 700;
+        font-weight: 400;
         letter-spacing: 0.25px;
         color: #1A64D7;
         margin: 0 0 1em;
     }
     .card > .info-container > h4 {
-        font-family: Oswald, HelveticaNeue-CondensedBold, sans-serif;
+        font-family: "Lilita One", HelveticaNeue-CondensedBold, sans-serif;
         font-size: 24px;
-        font-weight: 700;
+        font-weight: 400;
         letter-spacing: 0;
         color: #1A64D7;
         margin-bottom: 0.67em;

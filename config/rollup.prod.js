@@ -33,7 +33,10 @@ const Domain = Object.freeze({
 });
 
 const AssetURL = Object.freeze({
-    Fonts: `${Domain.GoogleFonts}/css?family=Rubik:400,700|Oswald:700`,
+    Fonts: [
+        Domain.GoogleFonts,
+        "css?family=Rubik:400,700|Oswald:700|Lilita+One:400"
+    ].join("/"),
     Icons: `${Domain.GoogleFonts}/icon?family=Material+Icons`,
     TypedJS: `${Domain.JSDelivr}/npm/typed.js@2`
 });

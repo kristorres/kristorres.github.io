@@ -7,9 +7,9 @@
         padding: 96px 48px;
     }
     section > h2 {
-        font-family: Oswald, HelveticaNeue-CondensedBold, sans-serif;
+        font-family: "Lilita One", HelveticaNeue-CondensedBold, sans-serif;
         font-size: 60px;
-        font-weight: 700;
+        font-weight: 400;
         letter-spacing: -0.5px;
         text-align: center;
         color: #1A64D7;
