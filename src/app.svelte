@@ -14,14 +14,20 @@
     .layout {
         display: flex;
         flex-direction: column;
-        background-color: #DAE0EA;
+        background-color: #CFD8DC;
         min-height: 100vh;
     }
     .layout > main {
         flex: 1;
         display: flex;
         flex-direction: column;
-        background-color: #D1F4FF;
+        background-color: var(--theme-background);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .layout {
+            background-color: #263238;
+        }
     }
 </style>
 

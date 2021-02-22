@@ -1,0 +1,27 @@
+:root {
+    color-scheme: light dark;
+
+    --torres-blue: #1A64D7;
+
+    --theme-primary: var(--torres-blue);
+    --theme-secondary: #FFB500;
+    --theme-surface: white;
+    --theme-background: #D1F4FF;
+    --theme-text-on-background: black;
+
+    --font-display: "Lilita One", HelveticaNeue-CondensedBold, sans-serif;
+    --font-text: Rubik, -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-primary: #70D7FF;
+        --theme-surface: #424242;
+        --theme-background: #011627;
+        --theme-text-on-background: white;
+    }
+}

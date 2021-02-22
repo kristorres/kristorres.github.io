@@ -23,7 +23,7 @@
         ;
         grid-gap: 16px;
         align-items: center;
-        border: 4px solid #1A64D7;
+        border: 4px solid var(--theme-primary);
         border-radius: 16px;
         max-width: 1200px;
         padding: 16px;
@@ -32,7 +32,7 @@
     }
     .card:hover {
         background-color: #FFFFB2;
-        border-color: #FFB500;
+        border-color: var(--theme-secondary);
     }
     .card > .image-container {
         grid-area: image;
@@ -49,34 +49,34 @@
         padding: 16px;
     }
     .card > .info-container > h3 {
-        font-family: "Lilita One", HelveticaNeue-CondensedBold, sans-serif;
+        font-family: var(--font-display);
         font-size: 36px;
         font-weight: 400;
         letter-spacing: 0.25px;
-        color: #1A64D7;
+        color: var(--theme-primary);
         margin: 0 0 1em;
     }
     .card > .info-container > h4 {
-        font-family: "Lilita One", HelveticaNeue-CondensedBold, sans-serif;
+        font-family: var(--font-display);
         font-size: 24px;
         font-weight: 400;
         letter-spacing: 0;
-        color: #1A64D7;
+        color: var(--theme-primary);
         margin-bottom: 0.67em;
     }
     .card > .info-container > p {
-        font-family: Rubik, -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+        font-family: var(--font-text);
         font-size: 20px;
         font-weight: 400;
         letter-spacing: 0.5px;
         line-height: 1.5;
-        color: black;
+        color: var(--theme-text-on-background);
     }
     .card > .info-container > .button {
         display: inline-block;
         background-color: #343A40;
         border-radius: 8px;
-        font-family: Rubik, -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+        font-family: var(--font-text);
         font-size: 24px;
         font-weight: 700;
         letter-spacing: 0.5px;
@@ -102,6 +102,12 @@
             grid-template-areas:
                 "info info info info info info info image image image image image"
             ;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .card:hover {
+            background-color: rgba(255, 255, 178, 0.1);
         }
     }
 </style>

@@ -8,12 +8,12 @@
         margin: 0 auto;
     }
     div > .lead {
-        font-family: Rubik, -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+        font-family: var(--font-text);
         font-size: 24px;
         font-weight: 400;
         letter-spacing: 0.5px;
         line-height: 1.5;
-        color: black;
+        color: var(--theme-text-on-background);
     }
 </style>
 
