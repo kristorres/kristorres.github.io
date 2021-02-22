@@ -1,9 +1,8 @@
 import {homepage} from "../package.json";
 
 const app = {
-    name: "Kris Torres’s Website",
+    name: "Kris Torres",
     description: "Kris Torres’s website.",
-    author: "Kris Torres",
     keywords: [
         "Kris Torres",
         "computer programming",
@@ -56,7 +55,7 @@ const htmlTemplate = (options) => `<!DOCTYPE html>
         <meta name="viewport" content="${viewportAttributes.join(", ")}"/>
 
         <!-- Basic info -->
-        <meta name="author" content="${app.author}"/>
+        <meta name="author" content="Kris Torres"/>
         <meta name="description" content="${app.description}"/>
         <meta name="keywords" content="${app.keywords.join(", ")}"/>
 
