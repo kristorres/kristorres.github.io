@@ -18,6 +18,7 @@
         max-width: 100%;
         height: 0;
         padding-bottom: 56.25%;
+        margin: 48px 0;
     }
     .video-container > .video {
         position: absolute;

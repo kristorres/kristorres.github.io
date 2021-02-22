@@ -1,6 +1,21 @@
 <script>
     import Section from "../section.svelte";
     import Video from "../video.svelte";
+
+    const legoSets = [
+        {
+            name: "Lego Architecture — Tokyo",
+            image: "lego-architecture-tokyo_21051.jpg"
+        },
+        {
+            name: "Lego Technic — Bugatti Chiron",
+            image: "lego-technic-bugatti_chiron_42083.jpg"
+        },
+        {
+            name: "Lego Technic — Lamborghini Sián FKP 37",
+            image: "lego-technic-lamborghini_sian_42115.jpg"
+        }
+    ];
 </script>
 
 <style>
@@ -16,6 +31,10 @@
         line-height: 1.5;
         color: var(--theme-text-on-background);
     }
+    div > img {
+        width: 100%;
+        margin: 24px 0;
+    }
 </style>
 
 <Section title="Hobbies">
@@ -28,5 +47,12 @@
             name="LINKIN PARK — What I’ve Done/New Divide/Iridescent [Piano Cover Compilation]"
             url="https://www.youtube.com/embed/tzspB34ui-Y"
         />
+        <p>
+            I am also a proud AFOL (<b>A</b>dult <b>F</b>an <b>O</b>f
+            <b>L</b>ego). Below are a few of my favorite sets that I built.
+        </p>
+        {#each legoSets as legoSet}
+            <img src="/images/lego/{legoSet.image}" alt="{legoSet.name}"/>
+        {/each}
     </div>
 </Section>
