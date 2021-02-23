@@ -35,12 +35,11 @@ const Domain = Object.freeze({
     JSDelivr: "https://cdn.jsdelivr.net"
 });
 
-const AssetURL = Object.freeze({
-    Fonts: [
-        Domain.GoogleFonts,
-        "css?family=Rubik:400,700|Oswald:700|Lilita+One:400"
-    ].join("/"),
-    Icons: `${Domain.GoogleFonts}/icon?family=Material+Icons`,
+const URL = Object.freeze({
+    Rubik: `${Domain.GoogleFonts}/css?family=Rubik:400,700&display=swap`,
+    Oswald: `${Domain.GoogleFonts}/css?family=Oswald:700&display=swap`,
+    LilitaOne: `${Domain.GoogleFonts}/css?family=Lilita+One:400&display=swap`,
+    MaterialIcons: `${Domain.GoogleFonts}/icon?family=Material+Icons`,
     TypedJS: `${Domain.JSDelivr}/npm/typed.js@2`
 });
 
@@ -80,8 +79,10 @@ const htmlTemplate = (options) => `<!DOCTYPE html>
         <title>${app.name}</title>
 
         <!-- Google Fonts CSS -->
-        <link rel="stylesheet" type="text/css" href="${AssetURL.Fonts}"/>
-        <link rel="stylesheet" type="text/css" href="${AssetURL.Icons}"/>
+        <link rel="stylesheet" type="text/css" href="${URL.Rubik}"/>
+        <link rel="stylesheet" type="text/css" href="${URL.Oswald}"/>
+        <link rel="stylesheet" type="text/css" href="${URL.LilitaOne}"/>
+        <link rel="stylesheet" type="text/css" href="${URL.MaterialIcons}"/>
 
         <!-- Global styles -->
         <link rel="stylesheet" type="text/css" href="/global.css"/>
@@ -91,7 +92,7 @@ const htmlTemplate = (options) => `<!DOCTYPE html>
         <link rel="apple-touch-icon" type="image/png" href="${app.iconURL}"/>
 
         <!-- Typed.js JavaScript -->
-        <script crossorigin src="${AssetURL.TypedJS}"></script>
+        <script crossorigin src="${URL.TypedJS}"></script>
 
     </head>
 
