@@ -30,6 +30,9 @@ permalink: /404.html
 
         <!-- Custom styles -->
         <style>
+            :root {
+                color-scheme: light dark;
+            }
             #content {
                 min-height: 100vh;
             }
@@ -42,6 +45,14 @@ permalink: /404.html
                 font: 50px "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
                 font-weight: 700;
                 color: black;
+            }
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: black;
+                }
+                #content #message h2 {
+                    color: white;
+                }
             }
         </style>
 
