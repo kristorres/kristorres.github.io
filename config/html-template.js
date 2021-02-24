@@ -20,7 +20,7 @@ const app = {
         ].join(" ")
     },
     themeColor: "#1A64D7",
-    iconURL: "/images/logos/KT_PRI_LOGO_ON_BLU.png"
+    iconURL: "images/logos/KT_PRI_LOGO_ON_BLU.png"
 };
 
 const viewportAttributes = [
@@ -85,10 +85,10 @@ const htmlTemplate = (options) => `<!DOCTYPE html>
         <link rel="stylesheet" type="text/css" href="${URL.MaterialIcons}"/>
 
         <!-- Global styles -->
-        <link rel="stylesheet" type="text/css" href="/global.css"/>
+        <link rel="stylesheet" type="text/css" href="global.css"/>
 
         <!-- Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
         <link rel="apple-touch-icon" type="image/png" href="${app.iconURL}"/>
 
         <!-- Typed.js JavaScript -->
