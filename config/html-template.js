@@ -1,8 +1,7 @@
-import {homepage} from "../package.json";
+import {description, homepage} from "../package.json";
 
 const app = {
     name: "Kris Torres",
-    description: "Kris Torres’s website.",
     keywords: [
         "Kris Torres",
         "computer programming",
@@ -55,7 +54,7 @@ const htmlTemplate = (options) => `<!DOCTYPE html>
 
         <!-- Basic info -->
         <meta name="author" content="Kris Torres"/>
-        <meta name="description" content="${app.description}"/>
+        <meta name="description" content="${description}"/>
         <meta name="keywords" content="${app.keywords.join(", ")}"/>
 
         <!-- Twitter Cards -->
