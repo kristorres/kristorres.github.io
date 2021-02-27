@@ -31,7 +31,7 @@
         background-attachment: fixed;
         padding: 48px 24px;
     }
-    header > .avatar {
+    .avatar {
         display: block;
         border: 8px solid rgba(255, 255, 255, 0.5);
         border-radius: 9999px;
@@ -39,7 +39,7 @@
         box-shadow: 0 0 1px 8px rgba(255, 255, 255, 0.25), 0 0 1px 16px rgba(255, 255, 255, 0.125);
         margin: 0 auto;
     }
-    header > h1 {
+    h1 {
         font-family: Oswald, HelveticaNeue-CondensedBold, sans-serif;
         font-size: 96px;
         font-weight: 700;
@@ -49,11 +49,11 @@
         text-transform: uppercase;
         color: white;
     }
-    header > h1::selection {
+    h1::selection {
         background-color: white;
         color: #0C3E36;
     }
-    header > .typing-carousel {
+    .typing-carousel {
         background-color: rgba(0, 0, 0, 0.25);
         border: 8px solid rgba(255, 255, 255, 0.5);
         border-radius: 16px;

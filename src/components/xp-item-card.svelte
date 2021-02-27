@@ -34,21 +34,21 @@
         background-color: #FFFFB2;
         border-color: var(--theme-secondary);
     }
-    .card > .image-container {
+    .image-container {
         grid-area: image;
         justify-self: center;
         padding: 32px 16px;
     }
-    .card > .image-container img {
+    .image-container img {
         max-width: 100%;
         max-height: 600px;
     }
-    .card > .info-container {
+    .info-container {
         grid-area: info;
         justify-self: start;
         padding: 16px;
     }
-    .card > .info-container > h3 {
+    .info-container > h3 {
         font-family: var(--font-display);
         font-size: 36px;
         font-weight: 400;
@@ -56,7 +56,7 @@
         color: var(--theme-primary);
         margin: 0 0 1em;
     }
-    .card > .info-container > h4 {
+    .info-container > h4 {
         font-family: var(--font-display);
         font-size: 24px;
         font-weight: 400;
@@ -64,7 +64,7 @@
         color: var(--theme-primary);
         margin-bottom: 0.67em;
     }
-    .card > .info-container > p {
+    .info-container > p {
         font-family: var(--font-text);
         font-size: 20px;
         font-weight: 400;
@@ -72,7 +72,7 @@
         line-height: 1.5;
         color: var(--theme-text-on-background);
     }
-    .card > .info-container > .button {
+    .button {
         display: inline-block;
         background-color: #343A40;
         border-radius: 8px;
@@ -89,7 +89,7 @@
         margin: 24px 0;
         transition: box-shadow 0.25s ease-in-out;
     }
-    .card > .info-container > .button:hover {
+    .button:hover {
         box-shadow: none;
     }
     @media (min-width: 960px) {

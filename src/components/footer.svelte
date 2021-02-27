@@ -4,7 +4,7 @@
         padding: 20px 32px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     }
-    footer > p {
+    p {
         font-family: var(--font-text);
         font-size: 16px;
         font-weight: 400;
@@ -12,15 +12,15 @@
         line-height: 1.25;
         color: #757575;
     }
-    footer > p > .material-icons {
+    p > .material-icons {
         font-size: 1.125rem;
         vertical-align: text-bottom;
     }
-    footer a {
+    a {
         text-decoration: none;
         color: #007BFF;
     }
-    footer a:hover {
+    a:hover {
         text-decoration: underline;
         color: #0056B3;
     }
@@ -29,10 +29,10 @@
     }
 
     @media (prefers-color-scheme: dark) {
-        footer > p {
+        p {
             color: #A0A0A0;
         }
-        footer a {
+        a {
             color: white !important;
         }
     }

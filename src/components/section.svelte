@@ -6,7 +6,7 @@
     section {
         padding: 96px 48px;
     }
-    section > h2 {
+    h2 {
         font-family: var(--font-display);
         font-size: 60px;
         font-weight: 400;

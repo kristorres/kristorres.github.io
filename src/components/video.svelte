@@ -20,7 +20,7 @@
         padding-bottom: 56.25%;
         margin: 48px 0;
     }
-    .video-container > .video {
+    .video {
         position: absolute;
         top: 0;
         left: 0;

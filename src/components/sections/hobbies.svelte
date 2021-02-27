@@ -23,7 +23,7 @@
         max-width: 720px;
         margin: 0 auto;
     }
-    div > p {
+    p {
         font-family: var(--font-text);
         font-size: 20px;
         font-weight: 400;
@@ -31,7 +31,7 @@
         line-height: 1.5;
         color: var(--theme-text-on-background);
     }
-    div > img {
+    img {
         width: 100%;
         margin: 24px 0;
     }

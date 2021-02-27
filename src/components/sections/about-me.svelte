@@ -7,7 +7,7 @@
         max-width: 720px;
         margin: 0 auto;
     }
-    div > .lead {
+    .lead {
         font-family: var(--font-text);
         font-size: 24px;
         font-weight: 400;

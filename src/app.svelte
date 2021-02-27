@@ -17,7 +17,7 @@
         background-color: #CFD8DC;
         min-height: 100vh;
     }
-    .layout > main {
+    main {
         flex: 1;
         display: flex;
         flex-direction: column;
