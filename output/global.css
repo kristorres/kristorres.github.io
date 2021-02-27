@@ -7,6 +7,7 @@
     --theme-secondary: #FFB500;
     --theme-surface: white;
     --theme-background: #D1F4FF;
+    --theme-text-on-surface: black;
     --theme-text-on-background: black;
 
     --font-display: "Lilita One", HelveticaNeue-CondensedBold, sans-serif;
@@ -22,6 +23,7 @@ body {
         --theme-primary: #70D7FF;
         --theme-surface: #424242;
         --theme-background: #011627;
+        --theme-text-on-surface: white;
         --theme-text-on-background: white;
     }
 }

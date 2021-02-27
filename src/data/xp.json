@@ -25,6 +25,7 @@
             "name": "React Partitions",
             "url": "https://kristorres.github.io/react-partitions",
             "imageURL": "https://github.com/kristorres/react-partitions/raw/develop/resources/sylvester-glaisher_bijection.gif",
+            "dropdownIcon": "drag_indicator",
             "summary": "I am the sole developer for React Partitions, which is an interactive web app where users can animate bijections of integer partitions with Ferrers diagrams.",
             "role": "Sole web app developer from new project to deployment.",
             "technologies": [
