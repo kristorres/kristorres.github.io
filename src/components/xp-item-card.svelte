@@ -74,7 +74,7 @@
     }
     .button {
         display: inline-block;
-        background-color: #343A40;
+        background-color: #37474F;
         border-radius: 8px;
         font-family: var(--font-text);
         font-size: 24px;
@@ -108,6 +108,10 @@
     @media (prefers-color-scheme: dark) {
         .card:hover {
             background-color: rgba(255, 255, 178, 0.1);
+        }
+        .button {
+            background-color: #B0BEC5;
+            color: black;
         }
     }
 </style>
