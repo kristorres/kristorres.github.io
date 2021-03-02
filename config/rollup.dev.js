@@ -24,6 +24,7 @@ export default {
         babel({
             include: "src/**/*.js",
             babelrc: false,
+            babelHelpers: "bundled",
             plugins: [
                 "@babel/plugin-proposal-optional-chaining",
                 "@babel/plugin-proposal-nullish-coalescing-operator"
