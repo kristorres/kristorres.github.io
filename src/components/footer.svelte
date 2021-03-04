@@ -8,6 +8,7 @@
         font-family: var(--font-text);
         font-size: 16px;
         font-weight: 400;
+        font-variant-ligatures: none;
         letter-spacing: 0.25px;
         line-height: 1.25;
         color: #757575;

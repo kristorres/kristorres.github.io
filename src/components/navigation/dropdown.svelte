@@ -59,6 +59,7 @@
         font-family: var(--font-text);
         font-size: 20px;
         font-weight: 400;
+        font-variant-ligatures: none;
         letter-spacing: 0.5px;
         color: var(--theme-text-on-surface);
         margin: 0;

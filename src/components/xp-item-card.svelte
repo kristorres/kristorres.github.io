@@ -68,6 +68,7 @@
         font-family: var(--font-text);
         font-size: 20px;
         font-weight: 400;
+        font-variant-ligatures: none;
         letter-spacing: 0.5px;
         line-height: 1.5;
         color: var(--theme-text-on-background);
