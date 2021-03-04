@@ -39,6 +39,7 @@ const URL = Object.freeze({
     Oswald: `${Domain.GoogleFonts}/css?family=Oswald:700&display=swap`,
     LilitaOne: `${Domain.GoogleFonts}/css?family=Lilita+One:400&display=swap`,
     MaterialIcons: `${Domain.GoogleFonts}/icon?family=Material+Icons`,
+    FAIcons: `${Domain.JSDelivr}/npm/font-awesome@4/css/font-awesome.min.css`,
     TypedJS: `${Domain.JSDelivr}/npm/typed.js@2`
 });
 
@@ -81,7 +82,10 @@ const htmlTemplate = (options) => `<!DOCTYPE html>
         <link rel="stylesheet" type="text/css" href="${URL.Rubik}"/>
         <link rel="stylesheet" type="text/css" href="${URL.Oswald}"/>
         <link rel="stylesheet" type="text/css" href="${URL.LilitaOne}"/>
+
+        <!-- Icons CSS -->
         <link rel="stylesheet" type="text/css" href="${URL.MaterialIcons}"/>
+        <link rel="stylesheet" type="text/css" href="${URL.FAIcons}"/>
 
         <!-- Global styles -->
         <link rel="stylesheet" type="text/css" href="global.css"/>
