@@ -35,13 +35,13 @@
         display: block;
         border: 8px solid rgba(255, 255, 255, 0.5);
         border-radius: 9999px;
-        width: 250px;
+        width: 240px;
         box-shadow: 0 0 1px 8px rgba(255, 255, 255, 0.25), 0 0 1px 16px rgba(255, 255, 255, 0.125);
         margin: 0 auto;
     }
     h1 {
         font-family: Oswald, HelveticaNeue-CondensedBold, sans-serif;
-        font-size: 96px;
+        font-size: 88px;
         font-weight: 700;
         letter-spacing: -1.5px;
         line-height: 1.25;
@@ -70,6 +70,14 @@
         padding: 0.375em;
         margin: 0 auto;
         cursor: default;
+    }
+    @media (min-width: 360px) {
+        .avatar {
+            width: 250px;
+        }
+        h1 {
+            font-size: 96px;
+        }
     }
 </style>
 

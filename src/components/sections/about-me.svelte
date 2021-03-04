@@ -9,7 +9,7 @@
     }
     .lead {
         font-family: var(--font-text);
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 400;
         font-variant-ligatures: none;
         letter-spacing: 0.5px;
@@ -17,7 +17,7 @@
         color: var(--theme-text-on-background);
     }
     .social-links {
-        font-size: 48px;
+        font-size: 40px;
         text-align: center;
         margin: 48px 0 24px;
     }
@@ -35,6 +35,14 @@
     }
     .fa-envelope {
         color: black;
+    }
+    @media (min-width: 420px) {
+        .lead {
+            font-size: 24px;
+        }
+        .social-links {
+            font-size: 48px;
+        }
     }
 
     @media (prefers-color-scheme: dark) {

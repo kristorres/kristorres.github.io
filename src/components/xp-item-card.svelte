@@ -37,7 +37,7 @@
     .image-container {
         grid-area: image;
         justify-self: center;
-        padding: 32px 16px;
+        padding: 32px 0;
     }
     .image-container img {
         max-width: 100%;
@@ -46,7 +46,7 @@
     .info-container {
         grid-area: info;
         justify-self: start;
-        padding: 16px;
+        padding: 16px 0;
     }
     .info-container > h3 {
         font-family: var(--font-display);
@@ -66,10 +66,10 @@
     }
     .info-container > p {
         font-family: var(--font-text);
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 400;
         font-variant-ligatures: none;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.25px;
         line-height: 1.5;
         color: var(--theme-text-on-background);
     }
@@ -78,7 +78,7 @@
         background-color: #37474F;
         border-radius: 8px;
         font-family: var(--font-text);
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
         letter-spacing: 0.5px;
         text-decoration: none;
@@ -92,6 +92,21 @@
     }
     .button:hover {
         box-shadow: none;
+    }
+    @media (min-width: 420px) {
+        .image-container {
+            padding: 32px 16px;
+        }
+        .info-container {
+            padding: 16px;
+        }
+        .info-container > p {
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+        .button {
+            font-size: 24px;
+        }
     }
     @media (min-width: 960px) {
         .card.image-left {

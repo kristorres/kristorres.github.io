@@ -4,7 +4,7 @@
 
 <style>
     section {
-        padding: 96px 48px;
+        padding: 96px 24px;
     }
     h2 {
         font-family: var(--font-display);
@@ -13,6 +13,11 @@
         letter-spacing: -0.5px;
         text-align: center;
         color: var(--theme-primary);
+    }
+    @media (min-width: 420px) {
+        section {
+            padding: 96px 48px;
+        }
     }
 </style>
 

@@ -25,16 +25,22 @@
     }
     p {
         font-family: var(--font-text);
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 400;
         font-variant-ligatures: none;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.25px;
         line-height: 1.5;
         color: var(--theme-text-on-background);
     }
     img {
         width: 100%;
         margin: 24px 0;
+    }
+    @media (min-width: 420px) {
+        p {
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
     }
 </style>
 

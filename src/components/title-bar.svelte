@@ -15,7 +15,7 @@
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
         background-color: var(--torres-blue);
-        padding: 8px 32px;
+        padding: 8px 24px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
     }
     .brand-container {
@@ -23,7 +23,7 @@
     }
     .brand {
         font-family: var(--font-text);
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
         letter-spacing: 0.15px;
         text-decoration: none;
@@ -55,6 +55,14 @@
     .material-icons {
         font-size: 32px;
         color: white;
+    }
+    @media (min-width: 360px) {
+        nav {
+            padding: 8px 32px;
+        }
+        .brand {
+            font-size: 24px;
+        }
     }
 </style>
 
