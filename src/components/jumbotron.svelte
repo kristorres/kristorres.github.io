@@ -10,7 +10,8 @@
                         "Hello, world!",
                         "Kumusta, mundo!",
                         "おはよう、世界！",
-                        "안녕, 세계!"
+                        "안녕, 세계!",
+                        "Salve mundi!"
                     ],
                     typeSpeed: 250,
                     backSpeed: 125,
