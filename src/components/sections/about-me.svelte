@@ -55,12 +55,10 @@
 <Section title="About Me">
     <div>
         <p class="lead">
-            <b>Hello, world!</b> I am an app developer from Carson, CA. I love
-            to build fun apps for myself, and I find the experience rewarding,
-            educational, and somewhat addictive. I also like to listen to K‑pop
-            and J‑pop, especially while I am working. In my free time, I usually
-            play the piano, build Lego models, and watch Korean dramas on
-            Netflix.
+            <b>Hello, world!</b> I’m an app developer and K‑pop/J‑pop aficionado
+            from Carson, CA. I love to build fun apps for myself, and I learn a
+            lot from the somewhat addictive experience. In my free time, I like
+            to sit back and watch Korean dramas on Netflix.
         </p>
         <p class="lead">
             My goal is to be a full-time iOS developer and/or work at Apple! 😎
