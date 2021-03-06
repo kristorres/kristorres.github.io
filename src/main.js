@@ -1,6 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import App from "./app.svelte";
 
-import Layout from "./components/Layout.js";
-
-ReactDOM.render(<Layout/>, document.querySelector("root"));
+const app = new App({
+    target: document.body
+});
