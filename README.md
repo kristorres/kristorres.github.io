@@ -4,7 +4,7 @@ Kris Torres’s Website
 =====================
 
 <p>
-    <img src="https://img.shields.io/badge/Svelte-3.32-orange.svg?style=for-the-badge&logo=svelte"/>
+    <img src="https://img.shields.io/badge/Svelte-3.35-orange.svg?style=for-the-badge&logo=svelte"/>
     <a href="https://twitter.com/ohayoukris">
         <img src="https://img.shields.io/badge/Contact-@ohayoukris-lightgrey.svg?style=for-the-badge&logo=twitter"/>
     </a>
