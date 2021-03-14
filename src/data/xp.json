@@ -17,7 +17,8 @@
                 "Swift",
                 "SwiftUI",
                 "Networking",
-                "UserDefaults"
+                "AVFoundation",
+                "CoreHaptics"
             ],
             "repositoryURL": "https://github.com/kristorres/tensai"
         },
