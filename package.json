@@ -1,7 +1,7 @@
 {
   "name": "kristorres.github.io",
   "description": "Kris Torres’s website.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "svelte": "^3.35.0"
