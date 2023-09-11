@@ -1,0 +1,3 @@
+port: 2129
+sources:
+  - dir: build
