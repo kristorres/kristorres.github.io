@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@axel669/json-storage": "^0.1.1",
     "@axel669/zephyr": "^0.1.17",
-    "svelte": "^3.59.1"
+    "svelte": "^3.59.1",
+    "typed.js": "^2.0.16"
   },
   "devDependencies": {
     "@axel669/rollup-copy-static": "^0.1.2",

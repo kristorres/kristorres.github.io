@@ -1,5 +1,30 @@
 <script>
-    import {wsx} from "@axel669/zephyr"
+    import {
+        Button,
+        Icon,
+        Paper,
+        Screen,
+        Text,
+        Titlebar,
+        wsx,
+    } from "@axel669/zephyr"
+
+    import TypingCarousel from "./comp/typing-carousel.svelte"
+    import theme from "./state/theme.mjs"
+
+    $: darkMode = ($theme === "dark")
+    $: themeButton = (darkMode === true)
+        ? {color: "#fbd38d", icon: "sun-high"}
+        : {color: "#805ad5", icon: "moon"}
+
+    const toggleTheme = () => {
+        if (darkMode === true) {
+            theme.set("light")
+            return
+        }
+
+        theme.set("dark")
+    }
 </script>
 
 <style>
@@ -37,4 +62,34 @@
     }
 </style>
 
-<svelte:body use:wsx={{theme: "light", "@app": true}} />
+<svelte:body use:wsx={{theme: $theme, "@app": true}} />
+
+<Screen width="100%">
+    <Paper
+        bg-c="&background"
+        square
+        scrollable
+        l-gap="0px"
+        l-pad="0px"
+        l-m="0px auto"
+        l-w="min(100%, 1200px)"
+    >
+        <Titlebar fill color="primary" slot="header">
+            <Text title over-x="hidden" slot="title">
+                <div>
+                    <TypingCarousel />
+                </div>
+            </Text>
+
+            <Button
+                compact
+                bg-c={themeButton.color}
+                m="4px"
+                on:click={toggleTheme}
+                slot="action"
+            >
+                <Icon name={themeButton.icon} t-sz="20px" />
+            </Button>
+        </Titlebar>
+    </Paper>
+</Screen>

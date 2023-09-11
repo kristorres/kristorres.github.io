@@ -5,12 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@axel669/json-storage':
+    specifier: ^0.1.1
+    version: 0.1.1
   '@axel669/zephyr':
     specifier: ^0.1.17
     version: 0.1.17
   svelte:
     specifier: ^3.59.1
     version: 3.59.2
+  typed.js:
+    specifier: ^2.0.16
+    version: 2.0.16
 
 devDependencies:
   '@axel669/rollup-copy-static':
@@ -48,6 +54,10 @@ packages:
     hasBin: true
     dependencies:
       fast-glob: 3.3.1
+    dev: false
+
+  /@axel669/json-storage@0.1.1:
+    resolution: {integrity: sha512-xoAAsUyxa5hWUlZ+2N6nUBOBnuIBiIAHuRFr0XcLJiU5ik2LSG6OVidtH3B57mse+WQU+RbiBHVd3gULv+4qTA==}
     dev: false
 
   /@axel669/rollup-copy-static@0.1.2:
@@ -767,6 +777,10 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+
+  /typed.js@2.0.16:
+    resolution: {integrity: sha512-IBB52GlJiTUOnomwdVVf7lWgC6gScn8md+26zTHj5oJWA+4pSuclHE76rbGI2hnyO+NT+QXdIUHbfjAY5nEtcw==}
+    dev: false
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
