@@ -9,6 +9,7 @@
         wsx,
     } from "@axel669/zephyr"
 
+    import Header from "./comp/header.svelte"
     import TypingCarousel from "./comp/typing-carousel.svelte"
     import theme from "./state/theme.mjs"
 
@@ -60,6 +61,10 @@
 
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     }
+
+    :global(::selection) {
+        background-color: var(--secondary-ripple);
+    }
 </style>
 
 <svelte:body use:wsx={{theme: $theme, "@app": true}} />
@@ -91,5 +96,7 @@
                 <Icon name={themeButton.icon} t-sz="20px" />
             </Button>
         </Titlebar>
+
+        <Header />
     </Paper>
 </Screen>
