@@ -44,6 +44,7 @@
         --text-color-secondary: #00000080;
 
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+        --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
     }
     :global([ws-x~="theme[dark]"]) {
         --torres-blue: #8dcbff;
@@ -60,6 +61,7 @@
         --text-color-secondary: #ffffff80;
 
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+        --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
     }
 
     :global(::selection) {
