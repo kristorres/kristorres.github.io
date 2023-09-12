@@ -10,6 +10,7 @@
     } from "@axel669/zephyr"
 
     import Header from "./comp/header.svelte"
+    import AboutMe from "./comp/section/about-me.svelte"
     import TypingCarousel from "./comp/typing-carousel.svelte"
     import theme from "./state/theme.mjs"
 
@@ -100,5 +101,6 @@
         </Titlebar>
 
         <Header />
+        <AboutMe />
     </Paper>
 </Screen>
