@@ -19,15 +19,20 @@
 
 <style>
     section-title {
+        display: block;
+
         font-family: var(--font-display);
         font-size: min(15vw, 60px);
         font-weight: 400;
         text-align: center;
+
+        color: var(--primary);
+        margin-bottom: 0.75em;
     }
 </style>
 
 <section use:wsx={{p: "48px 24px"}}>
-    <section-title use:wsx={{block: true, c: "&primary", "m-b": "0.75em"}}>
+    <section-title>
         {title}
     </section-title>
 
