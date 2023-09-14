@@ -16,7 +16,7 @@
     import info from "./info.yml"
     import theme from "./state/theme.mjs"
 
-    const {jobs = null} = info
+    const {jobs = [], projects = []} = info
 
     $: darkMode = ($theme === "dark")
     $: themeButton = (darkMode === true)
@@ -113,8 +113,11 @@
 
         <Header />
         <AboutMe />
-        {#if jobs?.length > 0}
+        {#if jobs.length > 0}
             <Items title="Now" items={jobs} />
+        {/if}
+        {#if projects.length > 0}
+            <Items title="Projects" items={projects} />
         {/if}
     </Paper>
 </Screen>

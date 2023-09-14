@@ -6,6 +6,7 @@ socialMedia:
 
 jobs:
   - name: Skechers USA, Inc.
+    url: https://www.skechers.com
     description: >-
       Designing and building the UI of an enterprise iPad app using Svelte and
       Cordova; the app is used at on-site events to streamline payroll deduction
@@ -14,4 +15,61 @@ jobs:
     image:
       url: https://www.skechers.com/assets/images/logo.png
       description: The Skechers logo.
-    url: https://www.skechers.com
+
+projects:
+  - name: Tensai
+    description: >-
+      I am the sole iOS developer for Tensai, which is a trivia app. Tensai
+      generates a quiz of random trivia questions for the player to answer. The
+      app is still in development.
+    image:
+      url: https://github.com/kristorres/tensai/raw/develop/Screenshots/trivia_quiz.png
+      description: >-
+        A screenshot of the Tensai iOS app running on an iPhone; the player
+        chose the correct answer to the first trivia question.
+    details:
+      role: Sole iOS developer.
+      technologies:
+        - Swift
+        - SwiftUI
+        - Networking
+        - AVFoundation
+        - CoreHaptics
+      githubURL: https://github.com/kristorres/tensai
+  - name: Ferrers Rocher
+    url: https://kristorres.github.io/ferrers-rocher
+    description: >-
+      I am the sole web developer for Ferrers Rocher, which is an interactive
+      web app where users can animate bijections of integer partitions with
+      Ferrers diagrams.
+    image:
+      url: https://kristorres.github.io/ferrers-rocher/images/sylvester-glaisher-bijection-example.gif
+      description: >-
+        An animated screenshot of the Ferrers Rocher web app on Safari; the
+        Sylvester/Glaisher bijection transforms a randomly generated integer
+        partition of size 1,000 with odd parts to a partition of the same size
+        with distinct parts.
+    details:
+      role: Sole web developer from new project to deployment.
+      technologies:
+        - JavaScript
+        - Svelte
+        - Math
+      githubURL: https://github.com/kristorres/ferrers-rocher
+  - name: Twice Concentration
+    url: https://kristorres.github.io/twice-concentration
+    description: >-
+      I am the sole web developer for Twice Concentration, which is a web app
+      implementation of the classical memory card game. The theme is based on my
+      favorite K‑pop girl group Twice.
+    image:
+      url: https://github.com/kristorres/twice-concentration/raw/develop/resources/twice-concentration.gif
+      description: >-
+        An animated screenshot of the Twice Concentration web app on Safari; a
+        live game of Concentration is shown.
+    details:
+      role: Sole web developer from new project to deployment.
+      technologies:
+        - JavaScript
+        - Svelte
+      githubURL: https://github.com/kristorres/twice-concentration
