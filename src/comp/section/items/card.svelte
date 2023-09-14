@@ -7,7 +7,7 @@
     const {name, description, image, url = null, details = null} = item
 
     const wind = {
-        grid: {
+        card: {
             "bg-c": "&background-layer",
             "b-w": "&layer-border-width",
             "b-s": "solid",
@@ -26,7 +26,7 @@
 </script>
 
 <style>
-    grid {
+    card {
         display: grid;
         grid-template-areas:
             "image"
@@ -37,7 +37,7 @@
         padding: 16px;
         transition: 0.25s;
     }
-    grid:hover {
+    card:hover {
         border-color: var(--primary);
     }
 
@@ -78,18 +78,18 @@
     }
 
     @media (min-width: 960px) {
-        grid.image-left {
+        card.image-left {
             grid-template-columns: 5fr 7fr;
             grid-template-areas: "image info";
         }
-        grid.image-right {
+        card.image-right {
             grid-template-columns: 7fr 5fr;
             grid-template-areas: "info image";
         }
     }
 </style>
 
-<grid use:wsx={wind.grid} class="image-{imagePosition}">
+<card use:wsx={wind.card} class="image-{imagePosition}">
     <image-section>
         {#if url === null}
             <img src={image.url} alt={image.description} />
@@ -130,4 +130,4 @@
             {/if}
         </Flex>
     </info-section>
-</grid>
+</card>
