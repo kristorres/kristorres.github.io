@@ -3,3 +3,15 @@ socialMedia:
   GitHub: https://github.com/kristorres
   Twitter: https://twitter.com/ohayoukris
   LinkedIn: https://www.linkedin.com/in/ohayoukris
+
+jobs:
+  - name: Skechers USA, Inc.
+    description: >-
+      Designing and building the UI of an enterprise iPad app using Svelte and
+      Cordova; the app is used at on-site events to streamline payroll deduction
+      purchases of our work shoes. Also building UIs (Svelte) and services (AWS)
+      of various custom web apps that automate business workflows.
+    image:
+      url: https://www.skechers.com/assets/images/logo.png
+      description: The Skechers logo.
+    url: https://www.skechers.com

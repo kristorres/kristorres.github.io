@@ -11,8 +11,12 @@
 
     import Header from "./comp/header.svelte"
     import AboutMe from "./comp/section/about-me.svelte"
+    import Items from "./comp/section/items.svelte"
     import TypingCarousel from "./comp/typing-carousel.svelte"
+    import info from "./info.yml"
     import theme from "./state/theme.mjs"
+
+    const {jobs = null} = info
 
     $: darkMode = ($theme === "dark")
     $: themeButton = (darkMode === true)
@@ -109,5 +113,8 @@
 
         <Header />
         <AboutMe />
+        {#if jobs?.length > 0}
+            <Items title="Now" items={jobs} />
+        {/if}
     </Paper>
 </Screen>
