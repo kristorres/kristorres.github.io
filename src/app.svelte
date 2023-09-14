@@ -65,6 +65,13 @@
         --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
     }
 
+    :global(p) {
+        font-size: min(4vw, 16px);
+        font-weight: 400;
+        font-variant-ligatures: none;
+        line-height: 1.5;
+    }
+
     :global(::selection) {
         background-color: var(--secondary-ripple);
     }
