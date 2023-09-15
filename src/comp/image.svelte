@@ -26,7 +26,9 @@
 
 <Flex main="center" cross="center" pad="0px" w="100%" h="100%">
     {#if success === null}
-        <Spinner size="min(100%, 200px)" m="4px" />
+        <div use:wsx={{m: "4px"}}>
+            <Spinner size="min(100%, 200px)" />
+        </div>
     {:else if success === true}
         <img use:wsx={{w: "100%"}} src={url} alt={description} />
     {:else}
