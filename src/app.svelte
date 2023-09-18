@@ -1,6 +1,7 @@
 <script>
     import {
         Button,
+        EntryButton,
         Icon,
         Paper,
         Screen,
@@ -11,6 +12,7 @@
 
     import Footer from "./comp/footer.svelte"
     import Header from "./comp/header.svelte"
+    import Menu from "./comp/menu.svelte"
     import AboutMe from "./comp/section/about-me.svelte"
     import Hobbies from "./comp/section/hobbies.svelte"
     import Items from "./comp/section/items.svelte"
@@ -102,6 +104,9 @@
                 </div>
             </Text>
 
+            <EntryButton compact m="4px" component={Menu} slot="menu">
+                <Icon name="menu-2" t-sz="20px" />
+            </EntryButton>
             <Button
                 compact
                 bg-c={themeButton.color}
