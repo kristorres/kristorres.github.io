@@ -9,6 +9,7 @@
         wsx,
     } from "@axel669/zephyr"
 
+    import Footer from "./comp/footer.svelte"
     import Header from "./comp/header.svelte"
     import AboutMe from "./comp/section/about-me.svelte"
     import Hobbies from "./comp/section/hobbies.svelte"
@@ -121,5 +122,6 @@
             <Items title="Projects" items={projects} />
         {/if}
         <Hobbies />
+        <Footer />
     </Paper>
 </Screen>
