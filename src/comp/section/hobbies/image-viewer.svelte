@@ -46,7 +46,7 @@
 <Screen width="100%">
     <Paper card square l-main="center" l-cross="center">
         <Titlebar slot="header">
-            <Text title over-x="auto" slot="title">
+            <Text title t-ws="nowrap" over-x="auto" slot="title">
                 {title}
             </Text>
 
