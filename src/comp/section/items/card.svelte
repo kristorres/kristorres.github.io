@@ -4,6 +4,8 @@
 
     import {Chip, Flex, Icon, wsx} from "@axel669/zephyr"
 
+    import Link from "$/comp/link.svelte"
+
     const {name, description, image, url = null, details = null} = item
 
     const wind = {
@@ -70,13 +72,6 @@
         margin: 0px;
     }
 
-    a {
-        color: var(--text-color-normal);
-    }
-    a:hover {
-        color: var(--primary);
-    }
-
     @media (min-width: 960px) {
         card.image-left {
             grid-template-columns: 5fr 7fr;
@@ -94,9 +89,9 @@
         {#if url === null}
             <img src={image.url} alt={image.description} />
         {:else}
-            <a href={url} target="_blank">
+            <Link {url}>
                 <img src={image.url} alt={image.description} />
-            </a>
+            </Link>
         {/if}
     </image-section>
 
@@ -121,9 +116,9 @@
                 {#if links.length > 0}
                     <Flex direction="row" gap="20px" pad="0px">
                         {#each links as link}
-                            <a href={link.url} target="_blank">
+                            <Link url={link.url}>
                                 <Icon name={link.icon} t-sz="20px" />
-                            </a>
+                            </Link>
                         {/each}
                     </Flex>
                 {/if}

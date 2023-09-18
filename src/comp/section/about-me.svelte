@@ -1,6 +1,7 @@
 <script>
     import {Flex, Icon} from "@axel669/zephyr"
 
+    import Link from "$/comp/link.svelte"
     import Section from "$/comp/section.svelte"
     import {email, socialMedia} from "$/info.yml"
 
@@ -24,13 +25,6 @@
         font-variant-ligatures: none;
         line-height: 1.5;
     }
-
-    a {
-        color: var(--text-color-normal);
-    }
-    a:hover {
-        color: var(--primary);
-    }
 </style>
 
 <Section title="About Me" contentWidth="720px">
@@ -43,9 +37,9 @@
 
     <Flex direction="row" gap="32px" pad="0px">
         {#each contactLinks as link}
-            <a href={link.url} target="_blank">
+            <Link url={link.url}>
                 <Icon name={link.icon} t-sz="32px" />
-            </a>
+            </Link>
         {/each}
     </Flex>
 </Section>
