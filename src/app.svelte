@@ -11,6 +11,7 @@
 
     import Header from "./comp/header.svelte"
     import AboutMe from "./comp/section/about-me.svelte"
+    import Hobbies from "./comp/section/hobbies.svelte"
     import Items from "./comp/section/items.svelte"
     import TypingCarousel from "./comp/typing-carousel.svelte"
     import info from "./info.yml"
@@ -119,5 +120,6 @@
         {#if projects.length > 0}
             <Items title="Projects" items={projects} />
         {/if}
+        <Hobbies />
     </Paper>
 </Screen>
