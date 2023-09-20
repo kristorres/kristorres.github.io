@@ -3,25 +3,13 @@
     export let name
     export let width = "100%"
 
-    import {wsx} from "@axel669/zephyr"
-
     const wind = {
-        container: {
-            block: true,
-            pos: "relative",
-            "bg-c": "&background-layer",
-            w: (width === "100%")
-                ? width
-                : `min(100%, ${width})`,
-        },
-        video: {
-            pos: "absolute",
-            x: "0px",
-            y: "0px",
-            "b-w": "0px",
-            w: "100%",
-            h: "100%",
-        },
+        video: [
+            "block",
+            "pos[relative]",
+            "bg-c[&background-layer]",
+            `w[${(width === "100%") ? width : `min(100%,_${width})`}]`,
+        ].join(" "),
     }
 
     const videoFeatures = [
@@ -41,9 +29,9 @@
     }
 </style>
 
-<youtube-video use:wsx={wind.container}>
+<youtube-video ws-x={wind.video}>
     <iframe
-        use:wsx={wind.video}
+        ws-x="pos[absolute] x[0px] y[0px] b-w[0px] w[100%] h[100%]"
         src="https://www.youtube.com/embed/{encodeURIComponent(id)}?rel=0"
         title={name}
         allow={videoFeatures.join("; ")}

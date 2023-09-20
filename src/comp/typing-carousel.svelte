@@ -1,5 +1,4 @@
 <script>
-    import {wsx} from "@axel669/zephyr"
     import {onMount} from "svelte"
     import Typed from "typed.js"
 
@@ -25,4 +24,4 @@
     )
 </script>
 
-<typing-carousel use:wsx={{"t-ws": "pre"}} />
+<typing-carousel ws-x="t-ws[pre]" />

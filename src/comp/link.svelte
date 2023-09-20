@@ -1,14 +1,5 @@
 <script>
     export let url
-
-    import {wsx} from "@axel669/zephyr"
-
-    const wind = {
-        link: {
-            "t-deco": "none",
-            c: "&text-color-normal",
-        },
-    }
 </script>
 
 <style>
@@ -17,6 +8,6 @@
     }
 </style>
 
-<a use:wsx={wind.link} href={url} target="_blank">
+<a ws-x="t-deco[none] c[&text-color-normal]" href={url} target="_blank">
     <slot />
 </a>

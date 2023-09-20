@@ -2,21 +2,21 @@
     export let item
     export let imagePosition = "left"
 
-    import {Chip, Flex, Icon, wsx} from "@axel669/zephyr"
+    import {Chip, Flex, Icon} from "@axel669/zephyr"
 
     import Link from "$/comp/link.svelte"
 
     const {name, description, image, url = null, details = null} = item
 
     const wind = {
-        card: {
-            "bg-c": "&background-layer",
-            "b-w": "&layer-border-width",
-            "b-s": "solid",
-            "b-c": "&text-color-normal",
-            r: "4px",
-            shdw: "0px 2px 4px var(--shadow-color)",
-        },
+        card: [
+            "bg-c[&background-layer]",
+            "b-w[&layer-border-width]",
+            "b-s[solid]",
+            "b-c[&text-color-normal]",
+            "r[4px]",
+            "shdw[0px_2px_4px_var(--shadow-color)]",
+        ].join(" "),
     }
 
     const links = [
@@ -84,7 +84,7 @@
     }
 </style>
 
-<card use:wsx={wind.card} class="image-{imagePosition}">
+<card ws-x={wind.card} class="image-{imagePosition}">
     <image-section>
         {#if url === null}
             <img src={image.url} alt={image.description} />

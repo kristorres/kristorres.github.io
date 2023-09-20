@@ -1,5 +1,5 @@
 <script>
-    import {Grid, Modal, wsx} from "@axel669/zephyr"
+    import {Grid, Modal} from "@axel669/zephyr"
 
     import ImageViewer from "./hobbies/image-viewer.svelte"
     import YouTubeVideo from "./hobbies/youtube-video.svelte"
@@ -59,7 +59,7 @@
     <Grid cols="1fr 1fr 1fr" pad="0px">
         {#each lego.images as image, index}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <thumbnail use:wsx={{cur: "pointer"}} on:click={showImage(index)}>
+            <thumbnail ws-x="cur[pointer]" on:click={showImage(index)}>
                 <Image
                     url={thumbnail(image.url)}
                     description="{image.name} (Thumbnail)"

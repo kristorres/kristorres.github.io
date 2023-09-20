@@ -1,24 +1,26 @@
 <script>
-    import {Flex, wsx} from "@axel669/zephyr"
+    import {Flex} from "@axel669/zephyr"
 
     const wind = {
-        header: {
-            flex: "column",
-            "fl-center": true,
-            gap: "48px",
-            p: "48px 24px",
-        },
-        avatar: {
-            block: true,
-            pos: "relative",
-            "bg-c": "&background-layer",
-            "b-w": "&profile-border-width",
-            "b-s": "solid",
-            "b-c": "#ffffff80",
-            r: "50%",
-            over: "hidden",
-            w: "min(100%, 250px)",
-        },
+        header: [
+            "&header-font['American_Captain']",
+            "&profile-border-width[8px]",
+            "flex",
+            "fl-center",
+            "gap[48px]",
+            "p[48px_24px]",
+        ].join(" "),
+        avatar: [
+            "block",
+            "pos[relative]",
+            "bg-c[&background-layer]",
+            "b-w[&profile-border-width]",
+            "b-s[solid]",
+            "b-c[#ffffff80]",
+            "r[50%]",
+            "over[hidden]",
+            "w[min(100%,_250px)]",
+        ].join(" "),
     }
 
     const avatarDescription = [
@@ -31,11 +33,6 @@
     @font-face {
         font-family: "American Captain";
         src: url("/fonts/american-captain.otf");
-    }
-
-    header {
-        --header-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
-        --profile-border-width: 8px;
     }
 
     avatar {
@@ -63,10 +60,10 @@
     }
 </style>
 
-<header use:wsx={wind.header}>
-    <avatar use:wsx={wind.avatar}>
+<header ws-x={wind.header}>
+    <avatar ws-x={wind.avatar}>
         <img
-            use:wsx={{pos: "absolute", x: "0px", y: "0px", r: "50%", w: "100%"}}
+            ws-x="pos[absolute] x[0px] y[0px] r[50%] w[100%]"
             src="/images/profile.jpg"
             alt={avatarDescription}
         />

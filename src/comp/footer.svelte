@@ -1,5 +1,5 @@
 <script>
-    import {Icon, wsx} from "@axel669/zephyr"
+    import {Icon} from "@axel669/zephyr"
 
     import Link from "./link.svelte"
 </script>
@@ -15,7 +15,7 @@
     }
 </style>
 
-<footer use:wsx={{p: "16px"}}>
+<footer ws-x="p[16px]">
     <Link url="https://github.com/kristorres/kristorres.github.io">
         <Icon name="code" t-sz="1em" /> with
         <Icon name="heart-filled" t-sz="1em" /> by Kris Torres.

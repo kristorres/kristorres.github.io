@@ -15,19 +15,9 @@
     export let title
     export let contentWidth = "100%"
 
-    import {wsx} from "@axel669/zephyr"
-
-    const wind = {
-        content: {
-            flex: "column",
-            "fl-center": true,
-            gap: "48px",
-            m: "0px auto",
-            w: (contentWidth === "100%")
-                ? contentWidth
-                : `min(100%, ${contentWidth})`,
-        },
-    }
+    const width = (contentWidth === "100%")
+        ? contentWidth
+        : `min(100%,_${contentWidth})`
 </script>
 
 <style>
@@ -44,12 +34,12 @@
     }
 </style>
 
-<section use:wsx={{p: "48px 24px"}} id={identifier(title)}>
+<section ws-x="p[48px_24px]" id={identifier(title)}>
     <section-title>
         {title}
     </section-title>
 
-    <section-content use:wsx={wind.content}>
+    <section-content ws-x={`flex fl-center gap[48px] m[0px_auto] w[${width}]`}>
         <slot />
     </section-content>
 </section>
