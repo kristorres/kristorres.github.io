@@ -48,7 +48,7 @@
     </p>
     <YouTubeVideo
         id="tzspB34ui-Y"
-        name="{artist} — {songs.join("/")} [Piano Cover Medley]"
+        alt="{artist} — {songs.join("/")} [Piano Cover Medley]"
     />
 
     <p>

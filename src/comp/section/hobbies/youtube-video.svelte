@@ -1,6 +1,6 @@
 <script>
     export let id
-    export let name
+    export let alt
     export let width = "100%"
 
     const wind = {
@@ -33,7 +33,7 @@
     <iframe
         ws-x="pos[absolute] x[0px] y[0px] b-w[0px] w[100%] h[100%]"
         src="https://www.youtube.com/embed/{encodeURIComponent(id)}?rel=0"
-        title={name}
+        title={alt}
         allow={videoFeatures.join("; ")}
         allowfullscreen
     />
