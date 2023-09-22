@@ -4,6 +4,7 @@
 
     import {Chip, Flex, Icon} from "@axel669/zephyr"
 
+    import ImageLoader from "$/comp/image-loader.svelte"
     import Link from "$/comp/link.svelte"
 
     const {name, description, image, url = null, details = null} = item
@@ -47,10 +48,6 @@
         grid-area: image;
         justify-self: center;
     }
-    img {
-        max-width: 100%;
-        max-height: 600px;
-    }
 
     info-section {
         grid-area: info;
@@ -87,10 +84,18 @@
 <card ws-x={wind.card} class="image-{imagePosition}">
     <image-section>
         {#if url === null}
-            <img src={image.url} alt={image.description} />
+            <ImageLoader
+                url={image.url}
+                alt={image.description}
+                maxHeight="600px"
+            />
         {:else}
             <Link {url}>
-                <img src={image.url} alt={image.description} />
+                <ImageLoader
+                    url={image.url}
+                    alt={image.description}
+                    maxHeight="600px"
+                />
             </Link>
         {/if}
     </image-section>

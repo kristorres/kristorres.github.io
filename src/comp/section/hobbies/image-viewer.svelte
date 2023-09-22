@@ -14,7 +14,7 @@
         Titlebar,
     } from "@axel669/zephyr"
 
-    import Image from "$/comp/image.svelte"
+    import ImageLoader from "$/comp/image-loader.svelte"
 
     const imageCount = images.length
 
@@ -59,9 +59,9 @@
             <Text>No images available.</Text>
         {:else}
             {#key index}
-                <Image
+                <ImageLoader
                     url={currentImage.url}
-                    description={currentImage.description}
+                    alt={currentImage.description}
                 />
             {/key}
         {/if}

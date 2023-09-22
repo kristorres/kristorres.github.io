@@ -3,7 +3,7 @@
 
     import ImageViewer from "./hobbies/image-viewer.svelte"
     import YouTubeVideo from "./hobbies/youtube-video.svelte"
-    import Image from "$/comp/image.svelte"
+    import ImageLoader from "$/comp/image-loader.svelte"
     import Section from "$/comp/section.svelte"
     import lego from "$/lego.yml"
 
@@ -60,9 +60,9 @@
         {#each lego.images as image, index}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <thumbnail ws-x="cur[pointer]" on:click={showImage(index)}>
-                <Image
+                <ImageLoader
                     url={thumbnail(image.url)}
-                    description="{image.name} (Thumbnail)"
+                    alt="{image.name} (Thumbnail)"
                 />
             </thumbnail>
         {/each}

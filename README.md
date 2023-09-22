@@ -27,3 +27,9 @@ cd kristorres.github.io
 pnpm install
 pnpm build/dev
 ```
+
+Acknowledgements
+----------------
+
+Special thanks to @donovanh for his implementation of
+[lazily loading images in Svelte](https://css-tricks.com/lazy-loading-images-in-svelte).
