@@ -22,10 +22,24 @@
 
     const {jobs = [], projects = []} = info
 
+    let mousePoint = {x: 0, y: 0}
+
+    $: radialGradientArgs = [
+        `600px at ${mousePoint.x}px ${mousePoint.y}px`,
+        "#ffffff20",
+        "transparent 75%",
+    ]
+    $: radialGradient = `radial-gradient(${radialGradientArgs.join(", ")})`
+
     $: darkMode = ($theme === "dark")
     $: themeButton = (darkMode === true)
         ? {color: "#fbd38d", icon: "sun-high"}
         : {color: "#805ad5", icon: "moon"}
+
+    const moveRadialGradient = (event) => {
+        mousePoint.x = event.clientX
+        mousePoint.y = event.clientY
+    }
 
     const toggleTheme = () => {
         if (darkMode === true) {
@@ -85,11 +99,19 @@
     }
 </style>
 
-<svelte:body use:wsx={{theme: $theme, "@app": true}} />
+<svelte:body
+    use:wsx={{theme: $theme, "@app": true}}
+    on:mousemove={moveRadialGradient}
+/>
+
+<radial-gradient
+    ws-x="block w[100%] h[100%]"
+    style="background: {radialGradient}"
+/>
 
 <Screen width="100%">
     <Paper
-        bg-c="&background"
+        bg-c="#00000000"
         square
         scrollable
         l-gap="0px"
