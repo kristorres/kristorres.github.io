@@ -22,6 +22,10 @@
 
     const {jobs = [], projects = []} = info
 
+    const wind = {
+        background: "block pos[absolute] x[0px] y[0px] w[100%] h[100%]",
+    }
+
     let mousePoint = {x: 0, y: 0}
 
     $: radialGradientArgs = [
@@ -97,6 +101,15 @@
     :global(::selection) {
         background-color: var(--secondary-ripple);
     }
+
+    background {
+        background-image: url("/images/bg/einstein-tessellation.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+
+        opacity: 0.125;
+    }
 </style>
 
 <svelte:body
@@ -104,10 +117,13 @@
     on:mousemove={moveRadialGradient}
 />
 
-<radial-gradient
-    ws-x="block w[100%] h[100%]"
-    style="background: {radialGradient}"
-/>
+<div ws-x="pos[relative] w[100%] h[100%]">
+    <background ws-x={wind.background} />
+    <radial-gradient
+        ws-x={wind.background}
+        style="background: {radialGradient}"
+    />
+</div>
 
 <Screen width="100%">
     <Paper
