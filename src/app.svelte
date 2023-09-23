@@ -2,6 +2,7 @@
     import {
         Button,
         EntryButton,
+        Flex,
         Icon,
         Paper,
         Screen,
@@ -126,15 +127,7 @@
 </div>
 
 <Screen width="100%">
-    <Paper
-        bg-c="#00000000"
-        square
-        scrollable
-        l-gap="0px"
-        l-pad="0px"
-        l-m="0px auto"
-        l-w="min(100%, 1200px)"
-    >
+    <Paper bg-c="#00000000" square scrollable l-pad="0px">
         <Titlebar fill color="primary" slot="header">
             <Text title over-x="hidden" slot="title">
                 <div>
@@ -156,15 +149,17 @@
             </Button>
         </Titlebar>
 
-        <Header />
-        <AboutMe />
-        {#if jobs.length > 0}
-            <Items title="Now" items={jobs} />
-        {/if}
-        {#if projects.length > 0}
-            <Items title="Projects" items={projects} />
-        {/if}
-        <Hobbies />
-        <Footer />
+        <Flex gap="0px" pad="0px" m="0px auto" w="min(100%, 1200px)">
+            <Header />
+            <AboutMe />
+            {#if jobs.length > 0}
+                <Items title="Now" items={jobs} />
+            {/if}
+            {#if projects.length > 0}
+                <Items title="Projects" items={projects} />
+            {/if}
+            <Hobbies />
+            <Footer />
+        </Flex>
     </Paper>
 </Screen>
