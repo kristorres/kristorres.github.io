@@ -127,7 +127,7 @@
 </div>
 
 <Screen width="100%">
-    <Paper bg-c="#00000000" square scrollable l-pad="0px">
+    <Paper bg-c="transparent" square scrollable l-pad="0px">
         <Titlebar fill color="primary" slot="header">
             <Text title over-x="hidden" slot="title">
                 <div>
