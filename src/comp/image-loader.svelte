@@ -3,6 +3,7 @@
     export let alt
     export let maxWidth = "100%"
     export let maxHeight = "100%"
+    export let aspectRatio = null
 
     import {onMount} from "svelte"
 
@@ -22,6 +23,6 @@
 
 <IntersectionObserver once let:intersecting={intersecting}>
     {#if intersecting === true || nativeLoading === true}
-        <Image {url} {alt} {maxWidth} {maxHeight} />
+        <Image {url} {alt} {maxWidth} {maxHeight} {aspectRatio} />
     {/if}
 </IntersectionObserver>

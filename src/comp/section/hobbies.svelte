@@ -38,9 +38,6 @@
     p {
         width: 100%;
     }
-    thumbnail {
-        aspect-ratio: 1;
-    }
 </style>
 
 <Section title="Hobbies">
@@ -67,6 +64,7 @@
                 <ImageLoader
                     url={thumbnail(image.url)}
                     alt="{image.name} (Thumbnail)"
+                    aspectRatio={1}
                 />
             </thumbnail>
         {/each}

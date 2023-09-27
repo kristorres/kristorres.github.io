@@ -3,8 +3,13 @@
     export let alt
     export let maxWidth = "100%"
     export let maxHeight = "100%"
+    export let aspectRatio = null
 
     import {Icon} from "@axel669/zephyr"
+
+    const aspectRatioStyle = (aspectRatio === null)
+        ? null
+        : `aspect-ratio: ${aspectRatio}; object-fit: cover`
 
     let loaded = false
     let failed = false
@@ -34,6 +39,7 @@
     <img
         ws-x={`w-max[${maxWidth}] h-max[${maxHeight}]`}
         class:loaded
+        style={aspectRatioStyle}
         src={url}
         {alt}
         on:load={showImage}
