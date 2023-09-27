@@ -34,7 +34,7 @@
     </Titlebar>
 
     {#each sections as section}
-        <Button on:click={goToSection(section)}>
+        <Button t-sz="&text-size-normal" on:click={goToSection(section)}>
             {section}
         </Button>
     {/each}
