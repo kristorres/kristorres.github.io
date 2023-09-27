@@ -13,6 +13,7 @@
                         "おはよう、世界！",
                         "안녕, 세계!",
                         "Salve mundi!",
+                        "Det bedste er ikke for godt!",
                         "Слава Україні!",
                     ],
                     typeSpeed: 100,
