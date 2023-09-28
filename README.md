@@ -1,5 +1,5 @@
 <p>
-    <img src="static/images/miffy-rounded.png" width="240" alt="A circular logo featuring Miffy in front of a blue background." />
+    <img src="/static/images/miffy-rounded.png" width="240" alt="A circular logo featuring Miffy in front of a blue background." />
 </p>
 
 kristorres.github.io
@@ -33,5 +33,6 @@ pnpm build/dev
 Acknowledgements
 ----------------
 
-Special thanks to @donovanh for his implementation of
+Special thanks to [Donovan Hutchinson](https://github.com/donovanh) for his
+implementation of
 [lazily loading images in Svelte](https://css-tricks.com/lazy-loading-images-in-svelte).
