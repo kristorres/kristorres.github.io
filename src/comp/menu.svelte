@@ -3,8 +3,6 @@
 
     import {Button, Drawer, Icon, Text, Titlebar} from "@axel669/zephyr"
 
-    import {identifier} from "./section.svelte"
-
     const sections = [
         "About Me",
         "Now",
@@ -12,9 +10,11 @@
         "Hobbies",
     ]
 
-    const goToSection = (section) => {
+    const goToSection = (title) => {
         return () => {
-            window.location.href = `#${identifier(section)}`
+            document.querySelector(`section[data-title="${title}"]`)
+                .scrollIntoView({behavior: "smooth"})
+
             close()
         }
     }

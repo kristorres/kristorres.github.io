@@ -1,16 +1,3 @@
-<script context="module">
-    const identifier = (section) => {
-        return section
-            .trim()
-            .replace(/\s+/g, "-")
-            .toLocaleLowerCase("en-US")
-    }
-
-    export {
-        identifier,
-    }
-</script>
-
 <script>
     export let title
     export let contentWidth = "100%"
@@ -34,7 +21,7 @@
     }
 </style>
 
-<section ws-x="p[48px_24px]" id={identifier(title)}>
+<section ws-x="p[48px_24px]" data-title={title}>
     <section-title>
         {title}
     </section-title>
