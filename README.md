@@ -9,8 +9,10 @@ kristorres.github.io
     <img src="https://img.shields.io/badge/Svelte-3-ff3e00?style=for-the-badge&logo=svelte" alt="" />
 </p>
 
-This repository contains the codebase for my portfolio. The website is built
-with [Svelte](https://svelte.dev).
+![A screenshot of Kris Torres’s personal website.](/screenshot.png)
+
+This repository contains the codebase for my developer portfolio. The website is
+built with [Svelte](https://svelte.dev).
 
 Visual Studio Code Extensions
 -----------------------------
