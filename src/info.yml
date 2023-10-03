@@ -17,6 +17,21 @@ jobs:
       description: The Skechers logo.
 
 projects:
+  - name: Epson TM Printer Service
+    description: >-
+      I created a simple Cordova plugin for printing receipts from an Epson TM
+      printer. The library currently has support for iOS only.
+    image:
+      url: https://cordova.apache.org/static/img/cordova_bot.png
+      description: The Cordova logo.
+    details:
+      role: Sole developer.
+      technologies:
+        - JavaScript
+        - Swift
+        - Cordova
+        - Epson ePOS SDK for iOS
+      githubURL: https://github.com/kristorres/cordova-plugin-epson-tm
   - name: Tensai
     description: >-
       I am the sole iOS developer for Tensai, which is a trivia app. Tensai
