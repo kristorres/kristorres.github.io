@@ -25,7 +25,7 @@ projects:
       url: https://cordova.apache.org/static/img/cordova_bot.png
       description: The Cordova logo.
     details:
-      role: Sole developer.
+      role: Sole developer from new project to release.
       technologies:
         - JavaScript
         - Swift
