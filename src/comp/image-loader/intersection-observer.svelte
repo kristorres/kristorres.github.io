@@ -3,10 +3,6 @@
 
     import {onMount} from "svelte"
 
-    const wind = {
-        container: "flex fl-center p[0px] w[100%] h[100%]",
-    }
-
     let container = null
     let intersecting = false
 
@@ -53,6 +49,18 @@
     )
 </script>
 
-<intersection-observer ws-x={wind.container} bind:this={container}>
+<style>
+    intersection-observer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<intersection-observer bind:this={container}>
     <slot {intersecting} />
 </intersection-observer>

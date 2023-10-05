@@ -7,10 +7,6 @@
     import Section from "$/comp/section.svelte"
     import lego from "$/lego.yml"
 
-    const wind = {
-        thumbnail: "bg-c[&background-layer] cur[pointer]",
-    }
-
     const artist = "LINKIN PARK"
     const songs = ["What I’ve Done", "New Divide", "Iridescent"]
 
@@ -38,6 +34,11 @@
     p {
         width: 100%;
     }
+
+    thumbnail {
+        background-color: var(--background-layer);
+        cursor: pointer;
+    }
 </style>
 
 <Section title="Hobbies">
@@ -60,7 +61,7 @@
     <Grid cols="1fr 1fr 1fr" pad="0px">
         {#each lego.images as image, index}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <thumbnail ws-x={wind.thumbnail} on:click={showImage(index)}>
+            <thumbnail on:click={showImage(index)}>
                 <ImageLoader
                     url={thumbnail(image.url)}
                     alt="{image.name} (Thumbnail)"

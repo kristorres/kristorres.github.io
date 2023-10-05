@@ -24,7 +24,7 @@
     const {jobs = [], projects = []} = info
 
     const wind = {
-        background: "block pos[absolute] x[0px] y[0px] w[100%] h[100%]",
+        fill: "block pos[absolute] x[0px] y[0px] w[100%] h[100%]",
     }
 
     let mousePoint = {x: 0, y: 0}
@@ -119,11 +119,8 @@
 />
 
 <div ws-x="pos[relative] w[100%] h[100%]">
-    <background ws-x={wind.background} />
-    <radial-gradient
-        ws-x={wind.background}
-        style="background: {radialGradient}"
-    />
+    <background ws-x={wind.fill} />
+    <radial-gradient ws-x={wind.fill} style="background: {radialGradient}" />
 </div>
 
 <Screen width="100%">

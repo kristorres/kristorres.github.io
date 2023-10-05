@@ -9,17 +9,6 @@
 
     const {name, description, image, url = null, details = null} = item
 
-    const wind = {
-        card: [
-            "bg-c[&background-layer]",
-            "b-w[&layer-border-width]",
-            "b-s[solid]",
-            "b-c[&text-color-normal]",
-            "r[4px]",
-            "shdw[0px_2px_4px_var(--shadow-color)]",
-        ].join(" "),
-    }
-
     const links = [
         {icon: "brand-github", url: details?.githubURL ?? null},
         {icon: "external-link", url},
@@ -37,6 +26,11 @@
         ;
         align-items: center;
         gap: 32px;
+
+        background-color: var(--background-layer);
+        border: var(--layer-border-width) solid var(--text-color-normal);
+        border-radius: 4px;
+        box-shadow: 0px 2px 4px var(--shadow-color);
         padding: 16px;
         transition: 0.25s;
     }
@@ -81,7 +75,7 @@
     }
 </style>
 
-<card ws-x={wind.card} class="image-{imagePosition}">
+<card class="image-{imagePosition}">
     <image-section>
         {#if url === null}
             <ImageLoader

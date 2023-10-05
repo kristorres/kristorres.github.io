@@ -12,10 +12,12 @@
         letter-spacing: 0.4px;
         line-height: 1.25;
         text-align: center;
+
+        padding: 16px;
     }
 </style>
 
-<footer ws-x="p[16px]">
+<footer>
     <Link url="https://github.com/kristorres/kristorres.github.io">
         <Icon name="code" t-sz="1em" /> with
         <Icon name="heart-filled" t-sz="1em" /> by Kris Torres.
