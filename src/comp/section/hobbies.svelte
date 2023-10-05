@@ -36,7 +36,7 @@
     }
 
     thumbnail {
-        background-color: var(--background-layer);
+        background-color: var(--surface);
         cursor: pointer;
     }
 </style>

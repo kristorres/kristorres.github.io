@@ -18,7 +18,7 @@
     youtube-video {
         display: block;
         position: relative;
-        background-color: var(--background-layer);
+        background-color: var(--surface);
         aspect-ratio: 16 / 9;
     }
 </style>

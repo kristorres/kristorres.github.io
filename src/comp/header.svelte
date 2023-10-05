@@ -29,7 +29,7 @@
     avatar {
         display: block;
         position: relative;
-        background-color: var(--background-layer);
+        background-color: var(--surface);
         border: var(--profile-border-width) solid #ffffff80;
         border-radius: 50%;
         overflow: hidden;

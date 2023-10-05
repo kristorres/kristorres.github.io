@@ -27,7 +27,7 @@
         align-items: center;
         gap: 32px;
 
-        background-color: var(--background-layer);
+        background-color: var(--surface);
         border: var(--layer-border-width) solid var(--text-color-normal);
         border-radius: 4px;
         box-shadow: 0px 2px 4px var(--shadow-color);

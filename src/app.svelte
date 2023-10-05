@@ -67,9 +67,7 @@
         --secondary-ripple: #ffb50060;
         --background: #b3e5fc;
         --background-layer: white;
-
-        --text-dark: #000000c0;
-        --text-color-secondary: #00000080;
+        --surface: #ffffffc0;
 
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
         --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
@@ -84,9 +82,7 @@
         --secondary-ripple: #fee28360;
         --background: #0b2958;
         --background-layer: #173460;
-
-        --text-light: #ffffffc0;
-        --text-color-secondary: #ffffff80;
+        --surface: #173460c0;
 
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
         --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
