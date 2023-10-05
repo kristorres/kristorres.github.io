@@ -32,25 +32,6 @@ projects:
         - Cordova
         - Epson ePOS SDK for iOS
       githubURL: https://github.com/kristorres/cordova-plugin-epson-tm
-  - name: Tensai
-    description: >-
-      I am the sole iOS developer for Tensai, which is a trivia app. Tensai
-      generates a quiz of random trivia questions for the player to answer. The
-      app is still in development.
-    image:
-      url: https://github.com/kristorres/tensai/raw/develop/Screenshots/trivia_quiz.png
-      description: >-
-        A screenshot of the Tensai iOS app running on an iPhone; the player
-        chose the correct answer to the first trivia question.
-    details:
-      role: Sole iOS developer.
-      technologies:
-        - Swift
-        - SwiftUI
-        - Networking
-        - AVFoundation
-        - CoreHaptics
-      githubURL: https://github.com/kristorres/tensai
   - name: Ferrers Rocher
     url: https://kristorres.github.io/ferrers-rocher
     description: >-
