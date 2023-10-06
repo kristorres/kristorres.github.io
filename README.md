@@ -9,7 +9,11 @@ kristorres.github.io
     <img src="https://img.shields.io/badge/Svelte-3-ff3e00?style=for-the-badge&logo=svelte" alt="" />
 </p>
 
-![A screenshot of Kris Torres’s personal website.](/screenshot.png)
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/screenshots/dark.png" />
+    <source media="(prefers-color-scheme: light)" srcset="/screenshots/light.png" />
+    <img src="/screenshots/light.png" alt="A screenshot of Kris Torres’s personal website." />
+</picture>
 
 This repository contains the codebase for my developer portfolio. The website is
 built with [Svelte](https://svelte.dev).
