@@ -24,9 +24,13 @@
             }
 
             [ws-x~="theme[light]"] {
+                --torres-blue: #1a64d7;
+
+                --primary: var(--torres-blue);
+                --primary-ripple: #1a64d760;
                 --background: #fff0ff;
 
-                --title-font: "American Captain";
+                --title-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
                 --subtitle-font: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
                 --title-color: var(--danger);
@@ -39,7 +43,7 @@
 
                 --background: #160824;
 
-                --title-font: "American Captain";
+                --title-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
                 --subtitle-font: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
                 --title-color: var(--neon-magenta);
@@ -147,10 +151,8 @@
         </style>
 
         <div ws-x="pos[relative] w[100%] h[100%]">
-            <background ws-x="block pos[absolute] x[0px] y[0px] w[100%] h[100%]">
-            </background>
-            <radial-gradient ws-x="block pos[absolute] x[0px] y[0px] w[100%] h[100%]">
-            </radial-gradient>
+            <background ws-x="block pos[absolute] x[0px] y[0px] w[100%] h[100%]"></background>
+            <radial-gradient ws-x="block pos[absolute] x[0px] y[0px] w[100%] h[100%]"></radial-gradient>
         </div>
 
         <ws-screen ws-x="&screen-width[100%] &stack[0] bg-c[transparent]">
