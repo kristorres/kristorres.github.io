@@ -39,7 +39,7 @@ projects:
       web app where users can animate bijections of integer partitions with
       Ferrers diagrams.
     image:
-      url: https://kristorres.github.io/ferrers-rocher/images/sylvester-glaisher-bijection-example.gif
+      url: https://github.com/kristorres/ferrers-rocher/raw/main/images/sylvester-glaisher-bijection-example.gif
       description: >-
         An animated screenshot of the Ferrers Rocher web app on Safari; the
         Sylvester/Glaisher bijection transforms a randomly generated integer
