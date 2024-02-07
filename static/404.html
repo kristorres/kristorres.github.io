@@ -14,8 +14,8 @@
         <link rel="icon" type="image/png" href="/images/miffy-rounded.png" />
         <link rel="apple-touch-icon" type="image/png" href="/images/miffy.png" />
     </head>
-    <body ws-x="theme[light] @app">
-        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js"></script>
+    <body ws-x="@theme:light @app">
+        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.3.6/dist/browser.js"></script>
 
         <style>
             @font-face {
@@ -23,7 +23,7 @@
                 src: url("/fonts/american-captain.otf");
             }
 
-            [ws-x~="theme[light]"] {
+            [ws-x~="@theme:light"] {
                 --torres-blue: #1a64d7;
 
                 --primary: var(--torres-blue);
@@ -37,7 +37,7 @@
                 --subtitle-color: #121212;
                 --link-color: var(--primary);
             }
-            [ws-x~="theme[dark]"] {
+            [ws-x~="@theme:dark"] {
                 --neon-magenta: #fe8fbd;
                 --apricot: #fcc89b;
 
@@ -150,18 +150,18 @@
             }
         </style>
 
-        <div ws-x="pos[relative] w[100%] h[100%]">
-            <background ws-x="block pos[absolute] x[0px] y[0px] w[100%] h[100%]"></background>
-            <radial-gradient ws-x="block pos[absolute] x[0px] y[0px] w[100%] h[100%]"></radial-gradient>
+        <div ws-x="[pos relative] [w 100%] [h 100%]">
+            <background ws-x="[disp block] [pos absolute] [x 0px] [y 0px] [w 100%] [h 100%]"></background>
+            <radial-gradient ws-x="[disp block] [pos absolute] [x 0px] [y 0px] [w 100%] [h 100%]"></radial-gradient>
         </div>
 
-        <ws-screen ws-x="&screen-width[100%] &stack[0] bg-c[transparent]">
-            <ws-paper ws-x="bg-c[transparent] r[0px]">
-                <ws-flex ws-x="fl-m-a[start] fl-cr-a[stretch] p[0px] over[auto] slot[content]">
+        <ws-screen ws-x="[@screen-width 100%] [@stack 0] [bg.c transparent]">
+            <ws-paper ws-x="[bg.c transparent] [r 0px]">
+                <ws-flex ws-x="[fl.main start] [fl.cross stretch] [p 0px] [over auto]" slot="content">
                     <grid>
                         <image-section>
                             <polaroid>
-                                <img ws-x="w[100%]" src="https://media.tenor.com/ZjGRkH5Nf1UAAAAC/twice-sana.gif" alt="Missing Sana-chan crying meme" />
+                                <img ws-x="[w 100%]" src="https://media.tenor.com/ZjGRkH5Nf1UAAAAC/twice-sana.gif" alt="Missing Sana-chan crying meme" />
                                 <polaroid-text>
                                     I’m like TT, just like TT…
                                 </polaroid-text>
@@ -200,7 +200,7 @@
                 )
             }
 
-            document.body.setAttribute("ws-x", `theme[${theme}] @app`)
+            document.body.setAttribute("ws-x", `@theme:${theme} @app`)
             document.body.addEventListener("mousemove", moveRadialGradient)
         </script>
     </body>
