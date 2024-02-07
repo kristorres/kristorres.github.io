@@ -38,7 +38,7 @@
     <Flex direction="row" gap="32px" pad="0px">
         {#each contactLinks as link}
             <Link url={link.url}>
-                <Icon name={link.icon} t-sz="32px" />
+                <Icon name={link.icon} t.sz="32px" />
             </Link>
         {/each}
     </Flex>

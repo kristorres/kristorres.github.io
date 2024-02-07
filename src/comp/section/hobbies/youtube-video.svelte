@@ -1,3 +1,5 @@
+<svelte:options immutable />
+
 <script>
     export let id
     export let alt
@@ -23,9 +25,9 @@
     }
 </style>
 
-<youtube-video ws-x="w[{(width === "100%") ? width : `min(100%, ${width})`}]">
+<youtube-video ws-x="[w {(width === "100%") ? width : `min(100%, ${width})`}]">
     <iframe
-        ws-x="pos[absolute] x[0px] y[0px] b-w[0px] w[100%] h[100%]"
+        ws-x="[pos absolute] [x 0px] [y 0px] [b.w 0px] [w 100%] [h 100%]"
         src="https://www.youtube.com/embed/{encodeURIComponent(id)}?rel=0"
         title={alt}
         allow={videoFeatures.join("; ")}

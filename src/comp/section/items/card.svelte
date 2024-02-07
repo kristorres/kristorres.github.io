@@ -1,3 +1,5 @@
+<svelte:options immutable />
+
 <script>
     export let item
     export let imagePosition = "left"
@@ -104,9 +106,9 @@
                 <p>{details.role}</p>
                 {#if details.technologies.length > 0}
                     <subheading>Technologies:</subheading>
-                    <Flex direction="row" fl-wr="wrap" pad="0px">
+                    <Flex direction="row" fl.wr="wrap" pad="0px">
                         {#each details.technologies as technology}
-                            <Chip fill color="secondary">
+                            <Chip fill color="@secondary">
                                 <p>{technology}</p>
                             </Chip>
                         {/each}
@@ -116,7 +118,7 @@
                     <Flex direction="row" gap="20px" pad="0px">
                         {#each links as link}
                             <Link url={link.url}>
-                                <Icon name={link.icon} t-sz="20px" />
+                                <Icon name={link.icon} t.sz="20px" />
                             </Link>
                         {/each}
                     </Flex>

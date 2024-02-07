@@ -19,7 +19,7 @@
 
 <footer>
     <Link url="https://github.com/kristorres/kristorres.github.io">
-        <Icon name="code" t-sz="1em" /> with
-        <Icon name="heart-filled" t-sz="1em" /> by Kris Torres.
+        <Icon name="code" t.sz="1em" /> with
+        <Icon name="heart-filled" t.sz="1em" /> by Kris Torres.
     </Link>
 </footer>

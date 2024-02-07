@@ -1,3 +1,5 @@
+<svelte:options immutable />
+
 <script>
     export let url
     export let alt
@@ -34,10 +36,10 @@
 </style>
 
 {#if failed === true}
-    <Icon name="photo-off" t-sz="50px" m="4px" />
+    <Icon name="photo-off" t.sz="50px" m="4px" />
 {:else}
     <img
-        ws-x={`w-max[${maxWidth}] h-max[${maxHeight}]`}
+        ws-x="[w.max {maxWidth}] [h.max {maxHeight}]"
         class:loaded
         style={aspectRatioStyle}
         src={url}

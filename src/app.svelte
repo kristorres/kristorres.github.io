@@ -5,7 +5,6 @@
         Flex,
         Icon,
         Paper,
-        Screen,
         Text,
         Titlebar,
         wsx,
@@ -14,6 +13,7 @@
     import Footer from "./comp/footer.svelte"
     import Header from "./comp/header.svelte"
     import Menu from "./comp/menu.svelte"
+    import Screen from "./comp/screen.svelte"
     import AboutMe from "./comp/section/about-me.svelte"
     import Hobbies from "./comp/section/hobbies.svelte"
     import Items from "./comp/section/items.svelte"
@@ -23,9 +23,9 @@
 
     const {jobs = [], projects = []} = info
 
-    const wind = {
-        fill: "block pos[absolute] x[0px] y[0px] w[100%] h[100%]",
-    }
+    const wind = Object.freeze({
+        fill: "[disp block] [pos absolute] [x 0px] [y 0px] [w 100%] [h 100%]",
+    })
 
     let mousePoint = {x: 0, y: 0}
 
@@ -57,7 +57,7 @@
 </script>
 
 <style>
-    :global([ws-x~="theme[light]"]) {
+    :global([ws-x~="@theme:light"]) {
         --torres-blue: #1a64d7;
         --torres-gold: #ffb500;
 
@@ -72,7 +72,7 @@
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
         --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
     }
-    :global([ws-x~="theme[dark]"]) {
+    :global([ws-x~="@theme:dark"]) {
         --torres-blue: #8dcbff;
         --torres-gold: #fee283;
 
@@ -110,35 +110,35 @@
 </style>
 
 <svelte:body
-    use:wsx={{theme: $theme, "@app": true}}
+    use:wsx={{"@theme": $theme, "@app": true}}
     on:mousemove={moveRadialGradient}
 />
 
-<div ws-x="pos[relative] w[100%] h[100%]">
+<div ws-x="[pos relative] [w 100%] [h 100%]">
     <background ws-x={wind.fill} />
-    <radial-gradient ws-x={wind.fill} style="background: {radialGradient}" />
+    <radial-gradient ws-x="{wind.fill} [bg {radialGradient}]" />
 </div>
 
 <Screen width="100%">
-    <Paper bg-c="transparent" square scrollable l-pad="0px">
-        <Titlebar fill color="primary" slot="header">
-            <Text title over-x="hidden" slot="title">
+    <Paper bg.c="transparent" sh.box="none" square scrollable l-pad="0px">
+        <Titlebar fill color="@primary" slot="header">
+            <Text title t.wt="700" over.x="hidden" slot="title">
                 <div>
                     <TypingCarousel />
                 </div>
             </Text>
 
             <EntryButton compact m="4px" component={Menu} slot="menu">
-                <Icon name="menu-2" t-sz="20px" />
+                <Icon name="menu-2" t.sz="20px" />
             </EntryButton>
             <Button
                 compact
-                bg-c={themeButton.color}
+                bg.c={themeButton.color}
                 m="4px"
                 on:click={toggleTheme}
                 slot="action"
             >
-                <Icon name={themeButton.icon} t-sz="20px" />
+                <Icon name={themeButton.icon} t.sz="20px" />
             </Button>
         </Titlebar>
 

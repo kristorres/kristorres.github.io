@@ -1,3 +1,5 @@
+<svelte:options immutable />
+
 <script>
     export let close
 
@@ -24,17 +26,17 @@
 
 <Drawer square scrollable w="min(100vw, 300px)">
     <Titlebar slot="header">
-        <Text title slot="title">
+        <Text title t.wt="700" slot="title">
             Sections
         </Text>
 
         <Button compact m="4px" on:click={close} slot="action">
-            <Icon name="x" t-sz="20px" />
+            <Icon name="x" t.sz="20px" />
         </Button>
     </Titlebar>
 
     {#each sections as section}
-        <Button t-sz="&text-size-normal" on:click={goToSection(section)}>
+        <Button t.sz="@text-size-normal" on:click={goToSection(section)}>
             {section}
         </Button>
     {/each}

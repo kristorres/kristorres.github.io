@@ -9,12 +9,12 @@
         Grid,
         Icon,
         Paper,
-        Screen,
         Text,
         Titlebar,
     } from "@axel669/zephyr"
 
     import ImageLoader from "$/comp/image-loader.svelte"
+    import Screen from "$/comp/screen.svelte"
 
     const imageCount = images.length
 
@@ -46,12 +46,12 @@
 <Screen width="100%">
     <Paper card square l-main="center" l-cross="center">
         <Titlebar slot="header">
-            <Text title t-ws="nowrap" over-x="auto" slot="title">
+            <Text title t.wt="700" t.ws="nowrap" over.x="auto" slot="title">
                 {title}
             </Text>
 
             <Button compact m="4px" on:click={close} slot="action">
-                <Icon name="x" t-sz="20px" />
+                <Icon name="x" t.sz="20px" />
             </Button>
         </Titlebar>
 
@@ -68,8 +68,8 @@
 
         <Grid cols="1fr 1fr" slot="footer">
             <Button
-                color="primary"
-                t-sz="&text-size-normal"
+                color="@primary"
+                t.sz="@text-size-normal"
                 on:click={goToPreviousImage}
                 disabled={imageCount < 2}
             >
@@ -79,8 +79,8 @@
                 </Flex>
             </Button>
             <Button
-                color="primary"
-                t-sz="&text-size-normal"
+                color="@primary"
+                t.sz="@text-size-normal"
                 on:click={goToNextImage}
                 disabled={imageCount < 2}
             >
