@@ -1,5 +1,5 @@
 <p>
-    <img src="/static/images/miffy-rounded.png" width="240" alt="A circular logo featuring Miffy in front of a blue background." />
+    <img src="site/static/images/miffy-rounded.png" width="240" alt="A circular logo featuring Miffy in front of a blue background." />
 </p>
 
 kristorres.github.io
