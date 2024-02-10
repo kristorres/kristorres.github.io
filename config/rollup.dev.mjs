@@ -10,7 +10,7 @@ import svelte from "rollup-plugin-svelte"
 import htmlTemplate from "./html-template.mjs"
 
 export default {
-    input: "src/main.mjs",
+    input: "site/src/main.mjs",
     output: {
         file: `build/app-d${Date.now()}.mjs`,
         format: "esm",
@@ -20,7 +20,7 @@ export default {
             targets: "build/*",
         }),
         $path({
-            root: "src",
+            root: "site/src",
             extensions: [".js", ".mjs", ".svelte"],
         }),
         yaml(),
@@ -31,6 +31,6 @@ export default {
             fileName: "index.html",
             template: htmlTemplate,
         }),
-        copy("static"),
+        copy("site/static"),
     ],
 }
