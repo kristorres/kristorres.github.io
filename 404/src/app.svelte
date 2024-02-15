@@ -35,140 +35,140 @@
         type="text/css"
         href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script:400"
     />
-
-    <style>
-        @font-face {
-            font-family: "American Captain";
-            src: url("/fonts/american-captain.otf");
-        }
-
-        [ws-x~="@theme:light"] {
-            --torres-blue: #1a64d7;
-
-            --primary: var(--torres-blue);
-            --primary-ripple: #1a64d760;
-            --background: #fff0ff;
-
-            --title-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
-            --subtitle-font: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-
-            --title-color: var(--danger);
-            --subtitle-color: #121212;
-            --link-color: var(--primary);
-        }
-        [ws-x~="@theme:dark"] {
-            --neon-magenta: #fe8fbd;
-            --apricot: #fcc89b;
-
-            --background: #160824;
-
-            --title-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
-            --subtitle-font: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-
-            --title-color: var(--neon-magenta);
-            --subtitle-color: var(--apricot);
-            --link-color: white;
-        }
-
-        h1 {
-            font-family: var(--title-font);
-            font-size: 160px;
-            font-weight: 400;
-            line-height: 1;
-            text-align: center;
-
-            color: var(--title-color);
-            margin: 0px;
-        }
-        h2 {
-            font-family: var(--subtitle-font);
-            font-size: min(10vw, 40px);
-            font-weight: 700;
-            text-align: center;
-
-            color: var(--subtitle-color);
-            margin: 0px;
-        }
-
-        a {
-            -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted;
-            color: var(--link-color);
-        }
-
-        background {
-            background-image: url("/images/bg/einstein-tessellation.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-
-            opacity: 0.125;
-        }
-
-        grid {
-            display: grid;
-            grid-template-areas:
-                "image"
-                "info"
-            ;
-            gap: 64px;
-
-            padding: 16px;
-            min-height: 100%;
-        }
-
-        image-section {
-            grid-area: image;
-            display: block;
-            align-self: end;
-            justify-self: center;
-        }
-        polaroid {
-            display: block;
-            background-color: white;
-            -webkit-user-select: none;
-            user-select: none;
-            box-shadow: 0px 4px 8px #00000040;
-            padding: 16px;
-            transition: 0.25s;
-        }
-        polaroid:hover {
-            transform: scale(1.25);
-            box-shadow: 0px 12px 24px #000000c0;
-        }
-        polaroid-text {
-            display: block;
-
-            font-family: "Nanum Pen Script", cursive;
-            font-size: min(8vw, 32px);
-            font-weight: 400;
-            line-height: 1;
-            text-align: center;
-
-            color: black;
-            margin: 0.25em 0px;
-        }
-
-        info-section {
-            grid-area: info;
-            display: block;
-            align-self: start;
-        }
-
-        @media (min-width: 975px) {
-            grid {
-                grid-template-columns: 1fr 1fr;
-                grid-template-areas: "info image";
-            }
-            image-section {
-                align-self: center;
-            }
-            info-section {
-                align-self: center;
-            }
-        }
-    </style>
 </svelte:head>
+
+<style>
+    @font-face {
+        font-family: "American Captain";
+        src: url("/fonts/american-captain.otf");
+    }
+
+    :global([ws-x~="@theme:light"]) {
+        --torres-blue: #1a64d7;
+
+        --primary: var(--torres-blue);
+        --primary-ripple: #1a64d760;
+        --background: #fff0ff;
+
+        --title-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
+        --subtitle-font: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+        --title-color: var(--danger);
+        --subtitle-color: #121212;
+        --link-color: var(--primary);
+    }
+    :global([ws-x~="@theme:dark"]) {
+        --neon-magenta: #fe8fbd;
+        --apricot: #fcc89b;
+
+        --background: #160824;
+
+        --title-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
+        --subtitle-font: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+        --title-color: var(--neon-magenta);
+        --subtitle-color: var(--apricot);
+        --link-color: white;
+    }
+
+    :global(h1) {
+        font-family: var(--title-font);
+        font-size: 160px;
+        font-weight: 400;
+        line-height: 1;
+        text-align: center;
+
+        color: var(--title-color);
+        margin: 0px;
+    }
+    :global(h2) {
+        font-family: var(--subtitle-font);
+        font-size: min(10vw, 40px);
+        font-weight: 700;
+        text-align: center;
+
+        color: var(--subtitle-color);
+        margin: 0px;
+    }
+
+    :global(a) {
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+        color: var(--link-color);
+    }
+
+    background {
+        background-image: url("/images/bg/einstein-tessellation.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+
+        opacity: 0.125;
+    }
+
+    grid {
+        display: grid;
+        grid-template-areas:
+            "image"
+            "info"
+        ;
+        gap: 64px;
+
+        padding: 16px;
+        min-height: 100%;
+    }
+
+    image-section {
+        grid-area: image;
+        display: block;
+        align-self: end;
+        justify-self: center;
+    }
+    polaroid {
+        display: block;
+        background-color: white;
+        -webkit-user-select: none;
+        user-select: none;
+        box-shadow: 0px 4px 8px #00000040;
+        padding: 16px;
+        transition: 0.25s;
+    }
+    polaroid:hover {
+        transform: scale(1.25);
+        box-shadow: 0px 12px 24px #000000c0;
+    }
+    polaroid-text {
+        display: block;
+
+        font-family: "Nanum Pen Script", cursive;
+        font-size: min(8vw, 32px);
+        font-weight: 400;
+        line-height: 1;
+        text-align: center;
+
+        color: black;
+        margin: 0.25em 0px;
+    }
+
+    info-section {
+        grid-area: info;
+        display: block;
+        align-self: start;
+    }
+
+    @media (min-width: 975px) {
+        grid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "info image";
+        }
+        image-section {
+            align-self: center;
+        }
+        info-section {
+            align-self: center;
+        }
+    }
+</style>
 
 <svelte:body
     use:wsx={{"@theme": theme, "@app": true}}

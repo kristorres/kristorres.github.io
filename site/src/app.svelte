@@ -56,6 +56,19 @@
     }
 </script>
 
+<svelte:head>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://fonts.googleapis.com/css?family=Rubik:400,700"
+    />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://fonts.googleapis.com/css?family=Rubik+Glitch:400"
+    />
+</svelte:head>
+
 <style>
     :global([ws-x~="@theme:light"]) {
         --torres-blue: #1a64d7;

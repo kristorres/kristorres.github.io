@@ -35,9 +35,6 @@ const htmlTemplate = (options) => `<!DOCTYPE html>
 
         <meta name="theme-color" content="#1a64d7" />
 
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik:400,700" />
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rubik+Glitch:400" />
-
         <link rel="icon" type="image/png" href="/images/miffy-rounded.png" />
         <link rel="apple-touch-icon" type="image/png" href="/images/miffy.png" />
     </head>
