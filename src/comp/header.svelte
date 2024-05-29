@@ -61,7 +61,7 @@
 <header>
     <avatar>
         <img
-            ws-x="pos[absolute] x[0px] y[0px] r[50%] w[100%]"
+            ws-x="[pos absolute] [x 0px] [y 0px] [r 50%] [w 100%]"
             src="/images/profile.jpg"
             alt={avatarDescription}
         />

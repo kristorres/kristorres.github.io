@@ -25,4 +25,4 @@
     )
 </script>
 
-<typing-carousel ws-x="t-ws[pre]" />
+<typing-carousel ws-x="[t.ws pre]" />

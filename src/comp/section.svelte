@@ -1,10 +1,12 @@
+<svelte:options immutable />
+
 <script>
     export let title
     export let contentWidth = "100%"
 
     const width = (contentWidth === "100%")
         ? contentWidth
-        : `min(100%,_${contentWidth})`
+        : `min(100%, ${contentWidth})`
 </script>
 
 <style>
@@ -21,12 +23,14 @@
     }
 </style>
 
-<section ws-x="p[48px_24px]" data-title={title}>
+<section ws-x="[p 48px 24px]" data-title={title}>
     <section-title>
         {title}
     </section-title>
 
-    <section-content ws-x={`flex fl-center gap[48px] m[0px_auto] w[${width}]`}>
+    <section-content
+        ws-x="[flex] [fl-center] [gap 48px] [m 0px auto] [w {width}]"
+    >
         <slot />
     </section-content>
 </section>

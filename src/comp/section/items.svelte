@@ -1,3 +1,5 @@
+<svelte:options immutable />
+
 <script>
     export let title
     export let items

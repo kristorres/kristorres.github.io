@@ -3,7 +3,11 @@ import {writable} from "svelte/store"
 
 const local = store(localStorage)
 
-const theme = writable(local.theme ?? "dark")
+const theme = writable(
+    (local.theme === "light")
+        ? "light"
+        : "dark"
+)
 
 theme.subscribe(
     (newValue) => {

@@ -1,6 +1,7 @@
 <script>
-    import {Flex, Icon} from "@axel669/zephyr"
+    import {Flex} from "@axel669/zephyr"
 
+    import Icon from "$/comp/icon.svelte"
     import Link from "$/comp/link.svelte"
     import Section from "$/comp/section.svelte"
     import {email, socialMedia} from "$/info.yml"
@@ -38,7 +39,7 @@
     <Flex direction="row" gap="32px" pad="0px">
         {#each contactLinks as link}
             <Link url={link.url}>
-                <Icon name={link.icon} t-sz="32px" />
+                <Icon name={link.icon} t.sz="32px" />
             </Link>
         {/each}
     </Flex>

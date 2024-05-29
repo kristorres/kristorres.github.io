@@ -1,6 +1,5 @@
 <script>
-    import {Icon} from "@axel669/zephyr"
-
+    import Icon from "./icon.svelte"
     import Link from "./link.svelte"
 </script>
 
@@ -19,7 +18,7 @@
 
 <footer>
     <Link url="https://github.com/kristorres/kristorres.github.io">
-        <Icon name="code" t-sz="1em" /> with
-        <Icon name="heart-filled" t-sz="1em" /> by Kris Torres.
+        <Icon name="code" t.sz="1em" /> with
+        <Icon name="heart-filled" t.sz="1em" /> by Kris Torres.
     </Link>
 </footer>
