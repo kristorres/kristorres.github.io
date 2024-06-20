@@ -1,13 +1,5 @@
 <script>
-    import {
-        Button,
-        EntryButton,
-        Flex,
-        Paper,
-        Text,
-        Titlebar,
-        wsx,
-    } from "@axel669/zephyr"
+    import {Button, EntryButton, Flex, Paper, Text, wsx} from "@axel669/zephyr"
 
     import Footer from "./comp/footer.svelte"
     import Header from "./comp/header.svelte"
@@ -17,6 +9,7 @@
     import AboutMe from "./comp/section/about-me.svelte"
     import Hobbies from "./comp/section/hobbies.svelte"
     import Items from "./comp/section/items.svelte"
+    import TitleBar from "./comp/title-bar.svelte"
     import TypingCarousel from "./comp/typing-carousel.svelte"
     import info from "./info.yml"
     import theme from "./state/theme.mjs"
@@ -79,7 +72,7 @@
 </svelte:head>
 
 <style>
-    :global([ws-x~="@theme:light"]) {
+    :global([ws-x~="@@theme:light"]) {
         --torres-blue: #1a64d7;
         --torres-gold: #ffb500;
 
@@ -91,10 +84,12 @@
         --background-layer: white;
         --surface: #ffffffc0;
 
+        --layer-border-width: 2px;
+
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
         --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
     }
-    :global([ws-x~="@theme:dark"]) {
+    :global([ws-x~="@@theme:dark"]) {
         --torres-blue: #8dcbff;
         --torres-gold: #fee283;
 
@@ -106,11 +101,14 @@
         --background-layer: #173460;
         --surface: #173460c0;
 
+        --layer-border-width: 2px;
+        --layer-border-color: var(--primary);
+
         --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
         --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
     }
 
-    :global(ws-titlebar span), :global(ws-chip) {
+    :global(ws-chip) {
         -webkit-user-select: none;
         user-select: none;
     }
@@ -143,7 +141,7 @@
 </style>
 
 <svelte:body
-    use:wsx={{"@theme": $theme, "@app": true}}
+    use:wsx={{"@@theme": $theme, "@@app": true}}
     on:mousemove={moveRadialGradient}
 />
 
@@ -153,9 +151,9 @@
 </background>
 
 <Screen>
-    <Paper bg.c="transparent" sh.box="none" square scrollable l-pad="0px">
-        <Titlebar fill color="@primary" slot="header">
-            <Text title t.wt="700" over.x="hidden" cur="default" slot="title">
+    <Paper bg.c="transparent" sh.box="none" square scrollable l-p="0px">
+        <TitleBar fill color="@primary" slot="header">
+            <Text title t.wt="700" cur="default" slot="title">
                 <div>
                     <TypingCarousel />
                 </div>
@@ -173,9 +171,9 @@
             >
                 <Icon name={themeButton.icon} t.sz="20px" />
             </Button>
-        </Titlebar>
+        </TitleBar>
 
-        <Flex gap="0px" pad="0px" m="0px auto" w="min(100%, 1200px)">
+        <Flex gap="0px" p="0px" m="0px auto" w="min(100%, 1200px)">
             <Header />
             <AboutMe />
             {#if jobs.length > 0}

@@ -58,7 +58,7 @@
         <strong>O</strong>f <strong>L</strong>ego). Below are a few of my
         favorite sets that I built.
     </p>
-    <Grid cols="1fr 1fr 1fr" pad="0px">
+    <Grid cols="1fr 1fr 1fr" p="0px">
         {#each lego.images as image, index}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <thumbnail on:click={showImage(index)}>

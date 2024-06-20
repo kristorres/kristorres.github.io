@@ -3,11 +3,12 @@
     export let images
     export let index
 
-    import {Button, Flex, Grid, Paper, Text, Titlebar} from "@axel669/zephyr"
+    import {Button, Flex, Grid, Paper, Text} from "@axel669/zephyr"
 
     import Icon from "$/comp/icon.svelte"
     import ImageLoader from "$/comp/image-loader.svelte"
     import Screen from "$/comp/screen.svelte"
+    import TitleBar from "$/comp/title-bar.svelte"
 
     const imageCount = images.length
 
@@ -38,15 +39,15 @@
 
 <Screen>
     <Paper card square l-main="center" l-cross="center">
-        <Titlebar slot="header">
-            <Text title t.wt="700" t.ws="nowrap" over.x="auto" slot="title">
+        <TitleBar scrollable slot="header">
+            <Text title t.wt="700" t.ws="nowrap" slot="title">
                 {title}
             </Text>
 
             <Button compact m="4px" on:click={close} slot="action">
                 <Icon name="x" t.sz="20px" />
             </Button>
-        </Titlebar>
+        </TitleBar>
 
         {#if currentImage === null}
             <Text>No images available.</Text>
@@ -66,7 +67,7 @@
                 on:click={goToPreviousImage}
                 disabled={imageCount < 2}
             >
-                <Flex direction="row" pad="0px">
+                <Flex direction="row" p="0px">
                     <Icon name="player-skip-back-filled" />
                     PREVIOUS
                 </Flex>
@@ -77,7 +78,7 @@
                 on:click={goToNextImage}
                 disabled={imageCount < 2}
             >
-                <Flex direction="row" pad="0px">
+                <Flex direction="row" p="0px">
                     NEXT
                     <Icon name="player-skip-forward-filled" />
                 </Flex>

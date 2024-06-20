@@ -98,7 +98,7 @@
     </image-section>
 
     <info-section>
-        <Flex gap="min(4vw, 16px)" pad="0px">
+        <Flex gap="min(4vw, 16px)" p="0px">
             <item-name>{name}</item-name>
             <p>{description}</p>
 
@@ -107,7 +107,7 @@
                 <p>{details.role}</p>
                 {#if details.technologies.length > 0}
                     <subheading>Technologies:</subheading>
-                    <Flex direction="row" fl.wr="wrap" pad="0px">
+                    <Flex direction="row" fl.wr="wrap" p="0px">
                         {#each details.technologies as technology}
                             <Chip fill color="@secondary" cur="default">
                                 <p>{technology}</p>
@@ -116,7 +116,7 @@
                     </Flex>
                 {/if}
                 {#if links.length > 0}
-                    <Flex direction="row" gap="20px" pad="0px">
+                    <Flex direction="row" gap="20px" p="0px">
                         {#each links as link}
                             <Link url={link.url}>
                                 <Icon name={link.icon} t.sz="20px" />

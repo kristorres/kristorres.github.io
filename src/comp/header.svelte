@@ -67,7 +67,7 @@
         />
     </avatar>
 
-    <Flex cross="center" gap="0px" pad="0px">
+    <Flex cross="center" gap="0px" p="0px">
         <header-title>Kris Torres</header-title>
         <header-subtitle>Software Engineer</header-subtitle>
     </Flex>

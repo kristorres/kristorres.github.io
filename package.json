@@ -4,12 +4,12 @@
     "private": true,
     "dependencies": {
         "@axel669/json-storage": "^0.1.1",
-        "@axel669/zephyr": "^0.3.8",
+        "@axel669/zephyr": "^0.4.5",
         "svelte": "^3.59.1",
         "typed.js": "^2.1.0"
     },
     "devDependencies": {
-        "@axel669/rollup-copy-static": "^0.1.2",
+        "@axel669/rollup-copy-static": "^0.2.0",
         "@axel669/rollup-dollar-path": "^0.1.0",
         "@rollup/plugin-commonjs": "^24.1.0",
         "@rollup/plugin-html": "^1.0.3",

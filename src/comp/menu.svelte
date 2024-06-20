@@ -3,9 +3,10 @@
 <script>
     export let close
 
-    import {Button, Drawer, Text, Titlebar} from "@axel669/zephyr"
+    import {Button, Drawer, Text} from "@axel669/zephyr"
 
     import Icon from "./icon.svelte"
+    import TitleBar from "./title-bar.svelte"
 
     const sections = [
         "About Me",
@@ -27,7 +28,7 @@
 </script>
 
 <Drawer square scrollable w="min(100vw, 300px)">
-    <Titlebar slot="header">
+    <TitleBar slot="header">
         <Text title t.wt="700" slot="title">
             Sections
         </Text>
@@ -35,7 +36,7 @@
         <Button compact m="4px" on:click={close} slot="action">
             <Icon name="x" t.sz="20px" />
         </Button>
-    </Titlebar>
+    </TitleBar>
 
     {#each sections as section}
         <Button t.sz="@text-size-normal" on:click={goToSection(section)}>
