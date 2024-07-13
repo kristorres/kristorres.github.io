@@ -115,6 +115,10 @@
         --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
     }
 
+    :global(html) {
+        -webkit-text-size-adjust: none;
+    }
+
     :global(ws-chip) {
         -webkit-user-select: none;
         user-select: none;
