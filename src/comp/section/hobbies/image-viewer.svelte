@@ -43,7 +43,7 @@
             slot="header"
         >
             <div
-                ws-x="[w 100%] [over.x auto]"
+                ws-x="[flex] [fl.main center] [w 100%] [h 100%] [over.x auto]"
                 style="-webkit-user-select: none; user-select: none"
                 slot="title"
             >
