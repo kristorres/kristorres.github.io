@@ -3,12 +3,11 @@
     export let images
     export let index
 
-    import {Button, Flex, Grid, Paper, Text} from "@axel669/zephyr"
+    import {Button, Flex, Grid, Paper, Text, Titlebar} from "@axel669/zephyr"
 
     import Icon from "$/comp/icon.svelte"
     import ImageLoader from "$/comp/image-loader.svelte"
     import Screen from "$/comp/screen.svelte"
-    import TitleBar from "$/comp/title-bar.svelte"
 
     const imageCount = images.length
 
@@ -39,15 +38,24 @@
 
 <Screen>
     <Paper card square l-main="center" l-cross="center">
-        <TitleBar scrollable slot="header">
-            <Text title t.wt="700" t.ws="nowrap" slot="title">
-                {title}
-            </Text>
+        <Titlebar
+            gr.cols="max-content minmax(0px, 1fr) max-content"
+            slot="header"
+        >
+            <div
+                ws-x="[w 100%] [over.x auto]"
+                style="-webkit-user-select: none; user-select: none"
+                slot="title"
+            >
+                <Text title t.wt="700" t.ws="nowrap">
+                    {title}
+                </Text>
+            </div>
 
             <Button compact m="4px" on:click={close} slot="action">
                 <Icon name="x" t.sz="20px" />
             </Button>
-        </TitleBar>
+        </Titlebar>
 
         {#if currentImage === null}
             <Text>No images available.</Text>

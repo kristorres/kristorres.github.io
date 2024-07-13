@@ -1,5 +1,13 @@
 <script>
-    import {Button, EntryButton, Flex, Paper, Text, wsx} from "@axel669/zephyr"
+    import {
+        Button,
+        EntryButton,
+        Flex,
+        Paper,
+        Text,
+        Titlebar,
+        wsx,
+    } from "@axel669/zephyr"
 
     import Footer from "./comp/footer.svelte"
     import Header from "./comp/header.svelte"
@@ -9,7 +17,6 @@
     import AboutMe from "./comp/section/about-me.svelte"
     import Hobbies from "./comp/section/hobbies.svelte"
     import Items from "./comp/section/items.svelte"
-    import TitleBar from "./comp/title-bar.svelte"
     import TypingCarousel from "./comp/typing-carousel.svelte"
     import info from "./info.yml"
     import theme from "./state/theme.mjs"
@@ -152,12 +159,23 @@
 
 <Screen>
     <Paper bg.c="transparent" sh.box="none" square scrollable l-p="0px">
-        <TitleBar fill color="@primary" slot="header">
-            <Text title t.wt="700" cur="default" slot="title">
-                <div>
-                    <TypingCarousel />
-                </div>
-            </Text>
+        <Titlebar
+            fill
+            color="@primary"
+            gr.cols="max-content minmax(0px, 1fr) max-content"
+            slot="header"
+        >
+            <div
+                ws-x="[w 100%] [over.x hidden]"
+                style="-webkit-user-select: none; user-select: none"
+                slot="title"
+            >
+                <Text title t.wt="700" cur="default">
+                    <div>
+                        <TypingCarousel />
+                    </div>
+                </Text>
+            </div>
 
             <EntryButton compact m="4px" component={Menu} slot="menu">
                 <Icon name="menu-2" t.sz="20px" />
@@ -171,7 +189,7 @@
             >
                 <Icon name={themeButton.icon} t.sz="20px" />
             </Button>
-        </TitleBar>
+        </Titlebar>
 
         <Flex gap="0px" p="0px" m="0px auto" w="min(100%, 1200px)">
             <Header />
