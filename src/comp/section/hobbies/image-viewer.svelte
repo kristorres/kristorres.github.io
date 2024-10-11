@@ -3,30 +3,46 @@
     export let images
     export let index
 
-    import {Button, Flex, Grid, Paper, Text, Titlebar} from "@axel669/zephyr"
+    import {
+        Button,
+        Flex,
+        Grid,
+        Paper,
+        Screen,
+        Text,
+        Titlebar,
+    } from "@axel669/zephyr"
 
-    import Icon from "$/comp/icon.svelte"
-    import ImageLoader from "$/comp/image-loader.svelte"
-    import Screen from "$/comp/screen.svelte"
+    import Icon from "$comp/icon.svelte"
+    import ImageLoader from "$comp/image-loader.svelte"
+
+    const header = [
+        "[flex]",
+        "[fl.main center]",
+        "[over.x auto]",
+        "[no-select]",
+        "[w 100%]",
+        "[h 100%]",
+    ].join(" ")
 
     const imageCount = images.length
 
-    const goToPreviousImage = () => {
-        if (index === 0) {
-            index = imageCount - 1
-            return
-        }
+    let scrollView = null
 
-        index -= 1
+    const goToPreviousImage = () => {
+        index = (index === 0)
+            ? imageCount - 1
+            : index - 1
+
+        scrollView.scrollLeft = 0
     }
 
     const goToNextImage = () => {
-        if (index === imageCount - 1) {
-            index = 0
-            return
-        }
+        index = (index === imageCount - 1)
+            ? 0
+            : index + 1
 
-        index += 1
+        scrollView.scrollLeft = 0
     }
 
     $: currentImage = images[index] ?? null
@@ -36,23 +52,19 @@
         : `${currentImage.name} (${index + 1}/${imageCount})`
 </script>
 
-<Screen>
+<Screen width="100%">
     <Paper card square l-main="center" l-cross="center">
         <Titlebar
             gr.cols="max-content minmax(0px, 1fr) max-content"
             slot="header"
         >
-            <div
-                ws-x="[flex] [fl.main center] [w 100%] [h 100%] [over.x auto]"
-                style="-webkit-user-select: none; user-select: none"
-                slot="title"
-            >
+            <div ws-x={header} bind:this={scrollView} slot="title">
                 <Text title t.wt="700" t.ws="nowrap">
                     {title}
                 </Text>
             </div>
 
-            <Button compact m="4px" on:click={close} slot="action">
+            <Button compact ground m="4px" on:click={close} slot="action">
                 <Icon name="x" t.sz="20px" />
             </Button>
         </Titlebar>
@@ -64,12 +76,15 @@
                 <ImageLoader
                     url={currentImage.url}
                     alt={currentImage.description}
+                    w.max="100%"
+                    h.max="100%"
                 />
             {/key}
         {/if}
 
         <Grid cols="1fr 1fr" slot="footer">
             <Button
+                ground
                 color="@primary"
                 t.sz="@text-size-normal"
                 on:click={goToPreviousImage}
@@ -81,6 +96,7 @@
                 </Flex>
             </Button>
             <Button
+                ground
                 color="@primary"
                 t.sz="@text-size-normal"
                 on:click={goToNextImage}

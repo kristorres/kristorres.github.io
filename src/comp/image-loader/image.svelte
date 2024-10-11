@@ -3,11 +3,11 @@
 <script>
     export let url
     export let alt
-    export let maxWidth = "100%"
-    export let maxHeight = "100%"
     export let aspectRatio = null
 
-    import Icon from "$/comp/icon.svelte"
+    import {wsx} from "@axel669/zephyr"
+
+    import Icon from "$comp/icon.svelte"
 
     const aspectRatioStyle = (aspectRatio === null)
         ? null
@@ -39,7 +39,7 @@
     <Icon name="photo-off" t.sz="50px" m="4px" />
 {:else}
     <img
-        ws-x="[w.max {maxWidth}] [h.max {maxHeight}]"
+        use:wsx={$$restProps}
         class:loaded
         style={aspectRatioStyle}
         src={url}

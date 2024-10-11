@@ -1,11 +1,11 @@
 <script>
-    import {Grid, Modal} from "@axel669/zephyr"
+    import {Flex, Grid, Modal} from "@axel669/zephyr"
 
+    import lego from "$/lego.yml"
+    import ImageLoader from "$comp/image-loader.svelte"
+    import Section from "$comp/section.svelte"
     import ImageViewer from "./hobbies/image-viewer.svelte"
     import YouTubeVideo from "./hobbies/youtube-video.svelte"
-    import ImageLoader from "$/comp/image-loader.svelte"
-    import Section from "$/comp/section.svelte"
-    import lego from "$/lego.yml"
 
     const artist = "LINKIN PARK"
     const songs = ["What I’ve Done", "New Divide", "Iridescent"]
@@ -34,6 +34,12 @@
     p {
         width: 100%;
     }
+    bold {
+        font-weight: 700;
+    }
+    italic {
+        font-style: italic;
+    }
 
     thumbnail {
         background-color: var(--surface);
@@ -41,24 +47,25 @@
     }
 </style>
 
-<Section title="Hobbies">
+<Section title="Hobbies" horizontalPadding="4px">
     <Modal component={ImageViewer} bind:this={imageViewer} />
 
-    <p>
-        I did piano covers of Linkin Park songs. Check out my
-        <em>Transformers</em> medley below. Enjoy! 🙂
-    </p>
-    <YouTubeVideo
-        id="tzspB34ui-Y"
-        alt="{artist} — {songs.join("/")} [Piano Cover Medley]"
-    />
-
-    <p>
-        I am also a proud AFOL (<strong>A</strong>dult <strong>F</strong>an
-        <strong>O</strong>f <strong>L</strong>ego). Below are a few of my
-        favorite sets that I built.
-    </p>
-    <Grid cols="1fr 1fr 1fr" p="0px">
+    <Flex main="center" cross="center" gap="48px" p="0px 20px" w="100%">
+        <p>
+            I did piano covers of Linkin Park songs. Check out my
+            <italic>Transformers</italic> medley below. Enjoy! 🙂
+        </p>
+        <YouTubeVideo
+            id="tzspB34ui-Y"
+            alt="{artist} — {songs.join("/")} [Piano Cover Medley]"
+        />
+        <p>
+            I am also a proud AFOL (<bold>A</bold>dult <bold>F</bold>an
+            <bold>O</bold>f <bold>L</bold>ego). Below are a few of my favorite
+            sets that I built.
+        </p>
+    </Flex>
+    <Grid cols="1fr 1fr 1fr" gap="4px" p="0px">
         {#each lego.images as image, index}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <thumbnail on:click={showImage(index)}>
@@ -66,6 +73,7 @@
                     url={thumbnail(image.url)}
                     alt="{image.name} (Thumbnail)"
                     aspectRatio={1}
+                    w="100%"
                 />
             </thumbnail>
         {/each}

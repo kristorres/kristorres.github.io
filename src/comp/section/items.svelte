@@ -4,8 +4,8 @@
     export let title
     export let items
 
+    import Section from "$comp/section.svelte"
     import Card from "./items/card.svelte"
-    import Section from "$/comp/section.svelte"
 
     const imagePosition = (itemIndex) => {
         if (itemIndex % 2 === 0) {

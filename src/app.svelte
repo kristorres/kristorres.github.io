@@ -4,20 +4,21 @@
         EntryButton,
         Flex,
         Paper,
+        Screen,
         Text,
         Titlebar,
         wsx,
     } from "@axel669/zephyr"
 
-    import Footer from "./comp/footer.svelte"
-    import Header from "./comp/header.svelte"
-    import Icon from "./comp/icon.svelte"
-    import Menu from "./comp/menu.svelte"
-    import Screen from "./comp/screen.svelte"
-    import AboutMe from "./comp/section/about-me.svelte"
-    import Hobbies from "./comp/section/hobbies.svelte"
-    import Items from "./comp/section/items.svelte"
-    import TypingCarousel from "./comp/typing-carousel.svelte"
+    import Footer from "$comp/footer.svelte"
+    import Header from "$comp/header.svelte"
+    import Icon from "$comp/icon.svelte"
+    import Menu from "$comp/menu.svelte"
+    import TypingCarousel from "$comp/typing-carousel.svelte"
+    import AboutMe from "$section/about-me.svelte"
+    import Hobbies from "$section/hobbies.svelte"
+    import Items from "$section/items.svelte"
+
     import info from "./info.yml"
     import theme from "./state/theme.mjs"
 
@@ -89,12 +90,12 @@
         --secondary-ripple: #ffb50060;
         --background: #b3e5fc;
         --background-layer: white;
-        --surface: #ffffffc0;
+        --surface: #ffffff80;
 
         --layer-border-width: 2px;
 
-        --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-        --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
+        --font: Rubik, ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+        --font-display: "Rubik Glitch", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
     }
     :global([ws-x~="@@theme:dark"]) {
         --torres-blue: #8dcbff;
@@ -106,29 +107,13 @@
         --secondary-ripple: #fee28360;
         --background: #0b2958;
         --background-layer: #173460;
-        --surface: #173460c0;
+        --surface: #00000080;
 
         --layer-border-width: 2px;
         --layer-border-color: var(--primary);
 
-        --font: Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-        --font-display: "Rubik Glitch", HelveticaNeue-CondensedBold, sans-serif;
-    }
-
-    :global(html) {
-        -webkit-text-size-adjust: none;
-    }
-
-    :global(ws-chip) {
-        -webkit-user-select: none;
-        user-select: none;
-    }
-
-    :global(p) {
-        font-size: min(4vw, 16px);
-        font-weight: 400;
-        font-variant-ligatures: none;
-        line-height: 1.5;
+        --font: Rubik, ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+        --font-display: "Rubik Glitch", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
     }
 
     :global(::selection) {
@@ -161,31 +146,30 @@
     <background-layer ws-x={radialGradient} />
 </background>
 
-<Screen>
+<Screen width="100%">
     <Paper bg.c="transparent" sh.box="none" square scrollable l-p="0px">
         <Titlebar
             fill
             color="@primary"
             gr.cols="max-content minmax(0px, 1fr) max-content"
+            no-select
+            cur="default"
             slot="header"
         >
-            <div
-                ws-x="[w 100%] [over.x hidden]"
-                style="-webkit-user-select: none; user-select: none"
-                slot="title"
-            >
-                <Text title t.wt="700" cur="default">
+            <div ws-x="[over.x hidden] [w 100%]" slot="title">
+                <Text title t.wt="700">
                     <div>
                         <TypingCarousel />
                     </div>
                 </Text>
             </div>
 
-            <EntryButton compact m="4px" component={Menu} slot="menu">
+            <EntryButton compact ground m="4px" component={Menu} slot="menu">
                 <Icon name="menu-2" t.sz="20px" />
             </EntryButton>
             <Button
                 compact
+                ground
                 bg.c={themeButton.color}
                 m="4px"
                 on:click={toggleTheme}
@@ -195,7 +179,7 @@
             </Button>
         </Titlebar>
 
-        <Flex gap="0px" p="0px" m="0px auto" w="min(100%, 1200px)">
+        <Flex gap="0px" p="0px" m="0px auto" w="min(100%, 1000px)">
             <Header />
             <AboutMe />
             {#if jobs.length > 0}

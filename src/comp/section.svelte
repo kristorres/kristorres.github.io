@@ -3,6 +3,7 @@
 <script>
     export let title
     export let contentWidth = "100%"
+    export let horizontalPadding = "24px"
 
     const width = (contentWidth === "100%")
         ? contentWidth
@@ -21,16 +22,23 @@
         color: var(--primary);
         margin-bottom: 0.75em;
     }
+    section-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+
+        margin: 0px auto;
+    }
 </style>
 
-<section ws-x="[p 48px 24px]" data-title={title}>
+<section ws-x="[p 48px {horizontalPadding}]" data-title={title}>
     <section-title>
         {title}
     </section-title>
 
-    <section-content
-        ws-x="[flex] [fl-center] [gap 48px] [m 0px auto] [w {width}]"
-    >
+    <section-content ws-x="[w {width}]">
         <slot />
     </section-content>
 </section>

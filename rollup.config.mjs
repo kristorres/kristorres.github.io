@@ -3,6 +3,7 @@ import $path from "@axel669/rollup-dollar-path"
 import commonJS from "@rollup/plugin-commonjs"
 import html from "@rollup/plugin-html"
 import resolve from "@rollup/plugin-node-resolve"
+import terser from "@rollup/plugin-terser"
 import yaml from "@rollup/plugin-yaml"
 import del from "rollup-plugin-delete"
 import svelte from "rollup-plugin-svelte"
@@ -12,8 +13,9 @@ import htmlTemplate from "./html-template.mjs"
 export default {
     input: "src/main.mjs",
     output: {
-        file: `build/portfolio-d${Date.now()}.mjs`,
+        file: "build/app.js",
         format: "esm",
+        sourcemap: true,
     },
     plugins: [
         del({
@@ -21,10 +23,15 @@ export default {
         }),
         $path({
             root: "src",
-            extensions: [".js", ".mjs", ".svelte"],
+            paths: {
+                $comp: "src/comp",
+                $section: "src/comp/section",
+            },
         }),
         yaml(),
-        svelte(),
+        svelte({
+            emitCss: false,
+        }),
         resolve(),
         commonJS(),
         html({
@@ -32,5 +39,6 @@ export default {
             template: htmlTemplate,
         }),
         copy("static"),
+        terser(),
     ],
 }

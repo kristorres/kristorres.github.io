@@ -1,10 +1,10 @@
 <script>
     import {Flex} from "@axel669/zephyr"
 
-    import Icon from "$/comp/icon.svelte"
-    import Link from "$/comp/link.svelte"
-    import Section from "$/comp/section.svelte"
     import {email, socialMedia} from "$/info.yml"
+    import Icon from "$comp/icon.svelte"
+    import Link from "$comp/link.svelte"
+    import Section from "$comp/section.svelte"
 
     const siteLinks = Object.entries(socialMedia)
         .map(
@@ -21,16 +21,20 @@
 
 <style>
     intro-text {
+        display: block;
         font-size: min(5vw, 20px);
         font-weight: 400;
         font-variant-ligatures: none;
         line-height: 1.5;
     }
+    bold {
+        font-weight: 700;
+    }
 </style>
 
 <Section title="About Me" contentWidth="720px">
     <intro-text>
-        <strong>Hello, world!</strong> I’m a software engineer, K‑pop/J‑pop
+        <bold>Hello, world!</bold> I’m a software engineer, K‑pop/J‑pop
         aficionado, and LA Dodgers fan from Carson, CA. I love to build fun apps
         for myself, and I learn a lot from the somewhat addicting experience.
         In my free time, I like to sit back and watch Korean dramas on Netflix.

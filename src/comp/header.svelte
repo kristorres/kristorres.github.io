@@ -1,31 +1,37 @@
 <script>
     import {Flex} from "@axel669/zephyr"
 
+    import ImageLoader from "./image-loader.svelte"
+
+    const headerFont = [
+        `"Barlow Condensed"`,
+        "HelveticaNeue-CondensedBold",
+        "sans-serif",
+    ].join(", ")
+    const header = [
+        `[@header-font ${headerFont}]`,
+        "[@profile-border-width 8px]",
+        "[flex]",
+        "[fl-center]",
+        "[gap 48px]",
+        "[p 48px 24px]",
+    ].join(" ")
+
     const avatarDescription = [
         "Kris Torres smiling and posing with double peace signs in Akihabara,",
         "Tokyo.",
     ].join(" ")
 </script>
 
+<svelte:head>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://fonts.googleapis.com/css?family=Barlow+Condensed:700"
+    />
+</svelte:head>
+
 <style>
-    @font-face {
-        font-family: "American Captain";
-        src: url("/fonts/american-captain.otf");
-    }
-
-    header {
-        --header-font: "American Captain", HelveticaNeue-CondensedBold, sans-serif;
-        --profile-border-width: 8px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 48px;
-
-        padding: 48px 24px;
-    }
-
     avatar {
         display: block;
         position: relative;
@@ -42,14 +48,17 @@
     }
 
     header-title {
+        display: block;
         font-family: var(--header-font);
         font-size: min(30vw, 120px);
-        font-weight: 400;
+        font-weight: 700;
         line-height: 1;
         text-align: center;
         text-transform: uppercase;
+        margin-bottom: 0.25em;
     }
     header-subtitle {
+        display: block;
         font-size: min(6vw, 24px);
         font-weight: 700;
         font-variant-ligatures: none;
@@ -58,12 +67,16 @@
     }
 </style>
 
-<header>
+<header ws-x={header}>
     <avatar>
-        <img
-            ws-x="[pos absolute] [x 0px] [y 0px] [r 50%] [w 100%]"
-            src="/images/profile.jpg"
+        <ImageLoader
+            url="/images/profile.jpg"
             alt={avatarDescription}
+            pos="absolute"
+            x="0px"
+            y="0px"
+            r="50%"
+            w="100%"
         />
     </avatar>
 

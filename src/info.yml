@@ -19,13 +19,12 @@ jobs:
 projects:
   - name: Epson TM Printer Service
     description: >-
-      I created a simple Cordova plugin for printing receipts from an Epson TM
-      printer. The library currently has support for iOS only.
+      A simple Cordova plugin for printing receipts from an Epson TM printer. It
+      currently has support for iOS only.
     image:
       url: https://cordova.apache.org/static/img/cordova_bot.png
       description: The Cordova logo.
     details:
-      role: Sole developer from new project to release.
       technologies:
         - JavaScript
         - Swift
@@ -35,9 +34,8 @@ projects:
   - name: Ferrers Rocher
     url: https://kristorres.github.io/ferrers-rocher
     description: >-
-      I am the sole web developer for Ferrers Rocher, which is an interactive
-      web app where users can animate bijections of integer partitions with
-      Ferrers diagrams.
+      An interactive web app where users can animate bijections of integer
+      partitions with Ferrers diagrams.
     image:
       url: https://github.com/kristorres/ferrers-rocher/raw/main/images/sylvester-glaisher-bijection-example.gif
       description: >-
@@ -46,7 +44,6 @@ projects:
         partition of size 1,000 with odd parts to a partition of the same size
         with distinct parts.
     details:
-      role: Sole web developer from new project to deployment.
       technologies:
         - JavaScript
         - Svelte
@@ -55,16 +52,14 @@ projects:
   - name: Twice Concentration
     url: https://kristorres.github.io/twice-concentration
     description: >-
-      I am the sole web developer for Twice Concentration, which is a web app
-      implementation of the classical memory card game. The theme is based on my
-      favorite K‑pop girl group Twice.
+      A web app implementation of the classical memory card game. The theme is
+      based on my favorite K‑pop girl group Twice.
     image:
-      url: https://github.com/kristorres/twice-concentration/raw/develop/resources/twice-concentration.gif
+      url: https://github.com/kristorres/twice-concentration/raw/production/resources/twice-concentration.gif
       description: >-
         An animated screenshot of the Twice Concentration web app on Safari; a
         live game of Concentration is shown.
     details:
-      role: Sole web developer from new project to deployment.
       technologies:
         - JavaScript
         - Svelte

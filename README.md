@@ -18,12 +18,6 @@ kristorres.github.io
 This repository contains the codebase for my developer portfolio. The website is
 built with [Svelte](https://svelte.dev).
 
-Visual Studio Code Extensions
------------------------------
-
-  * Svelte for VS Code (`svelte.svelte-vscode`)
-  * Axel’s Static Server (`axel669.static-serve`)
-
 Building and Running Locally
 ----------------------------
 
@@ -31,7 +25,8 @@ Building and Running Locally
 git clone https://github.com/kristorres/kristorres.github.io
 cd kristorres.github.io
 pnpm install
-pnpm build/dev
+pnpm build
+pnpm preview
 ```
 
 Acknowledgements

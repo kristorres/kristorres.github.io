@@ -28,19 +28,17 @@
 
 <Drawer square scrollable w="min(100vw, 300px)">
     <Titlebar slot="header">
-        <div style="-webkit-user-select: none; user-select: none" slot="title">
-            <Text title t.wt="700">
-                Sections
-            </Text>
-        </div>
+        <Text title t.wt="700" slot="title">
+            Sections
+        </Text>
 
-        <Button compact m="4px" on:click={close} slot="action">
+        <Button compact ground m="4px" on:click={close} slot="action">
             <Icon name="x" t.sz="20px" />
         </Button>
     </Titlebar>
 
     {#each sections as section}
-        <Button t.sz="@text-size-normal" on:click={goToSection(section)}>
+        <Button ground t.sz="@text-size-normal" on:click={goToSection(section)}>
             {section}
         </Button>
     {/each}
