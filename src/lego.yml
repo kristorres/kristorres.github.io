@@ -1,14 +1,51 @@
 images:
-  - name: Lego Architecture — Tokyo
+  - name: Himeji Castle
+    url: /images/lego/lego-architecture_himeji-castle_21060.jpg
+    description: A Lego model of Himeji Castle built by Kris Torres.
+  - name: Tokyo
     url: /images/lego/lego-architecture_tokyo_21051.jpg
     description: A Lego model of the Tokyo skyline built by Kris Torres.
-  - name: Lego Technic — Bugatti Chiron
+  - name: Steamboat Willie
+    url: /images/lego/ideas_steamboat-willie_21317.jpg
+    description: >-
+      A Lego model of the Steamboat Willie with Mickey Mouse in the cabin and
+      Minnie Mouse playing her guitar on the boat’s bow. Model built by Kris
+      Torres.
+  - name: Grand Piano
+    url: /images/lego/ideas_grand-piano_21323.jpg
+    description: A Lego model of a grand piano built by Kris Torres.
+  - name: NASA Apollo 11 Lunar Module Eagle
+    url: /images/lego/creator-expert_nasa-lunar-module-eagle_10266.jpg
+    description: >-
+      A Lego model of the NASA Apollo 11 Lunar Module Eagle with Neil Armstrong
+      planting the American flag in front and Buzz Aldrin climbing down its
+      ladder. Model built by Kris Torres.
+  - name: NASA Space Shuttle Discovery and Hubble Space Telescope
+    url: /images/lego/lego-icons_nasa-space-shuttle-discovery_10283.jpg
+    description: >-
+      Lego models of the NASA Space Shuttle Discovery (right) and Hubble Space
+      Telescope (left) built by Kris Torres.
+  - name: Super Mario 64 ? Block
+    url: /images/lego/lego-super-mario_question-mark-block_71395.jpg
+    description: >-
+      A Lego model of a ? Block with 3D minimaps of Peach’s Castle; Bob-omb
+      Battlefield; Cool, Cool Mountain; and Lethal Lava Land from Super Mario
+      64. Model built by Kris Torres.
+  - name: Bugatti Chiron
     url: /images/lego/lego-technic_bugatti-chiron_42083.jpg
     description: >-
       A 1:8 scale Lego Technic replica model of a duo-tone blue Bugatti Chiron
       built by Kris Torres.
-  - name: Lego Technic — Lamborghini Sián FKP 37
+  - name: Lamborghini Sián FKP 37
     url: /images/lego/lego-technic_lamborghini-sian_42115.jpg
     description: >-
       A 1:8 scale Lego Technic replica model of a lime green Lamborghini Sián
       FKP 37 built by Kris Torres.
+  - name: Ferrari Daytona SP3
+    url: /images/lego/lego-technic_ferrari-daytona_42143.jpg
+    description: >-
+      A 1:8 scale Lego Technic replica model of a classic red Ferrari Daytona
+      SP3 built by Kris Torres.
+  - name: Notre-Dame de Paris
+    url: /images/lego/lego-architecture_notre-dame-de-paris_21061.jpg
+    description: A Lego model of Notre-Dame de Paris built by Kris Torres.

@@ -61,7 +61,7 @@
         />
         <p>
             I am also a proud AFOL (<bold>A</bold>dult <bold>F</bold>an
-            <bold>O</bold>f <bold>L</bold>ego). Below are a few of my favorite
+            <bold>O</bold>f <bold>L</bold>ego). Below are several of my favorite
             sets that I built.
         </p>
     </Flex>
