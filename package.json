@@ -13,14 +13,14 @@
         "@axel669/rollup-copy-static": "^0.2.0",
         "@axel669/rollup-dollar-path": "^0.1.0",
         "@rollup/plugin-commonjs": "^24.1.0",
-        "@rollup/plugin-html": "^1.0.4",
+        "@rollup/plugin-html": "^1.1.0",
         "@rollup/plugin-node-resolve": "^15.0.2",
         "@rollup/plugin-terser": "^0.4.4",
         "@rollup/plugin-yaml": "^4.1.2",
         "rollup": "^3.23.0",
         "rollup-plugin-delete": "^2.1.0",
         "rollup-plugin-svelte": "^7.2.2",
-        "wrangler": "^3.81.0"
+        "wrangler": "^3.99.0"
     },
     "scripts": {
         "build": "rollup -c",

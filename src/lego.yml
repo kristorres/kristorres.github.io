@@ -46,6 +46,11 @@ images:
     description: >-
       A 1:8 scale Lego Technic replica model of a classic red Ferrari Daytona
       SP3 built by Kris Torres.
+  - name: McLaren P1
+    url: /images/lego/lego-technic_mclaren-p1_42172.jpg
+    description: >-
+      A 1:8 scale Lego Technic replica model of a Volcano Yellow McLaren P1
+      built by Kris Torres.
   - name: Notre-Dame de Paris
     url: /images/lego/lego-architecture_notre-dame-de-paris_21061.jpg
     description: A Lego model of Notre-Dame de Paris built by Kris Torres.
