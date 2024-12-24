@@ -32,7 +32,7 @@ projects:
         - Epson ePOS SDK for iOS
       githubURL: https://github.com/kristorres/cordova-plugin-epson-tm
   - name: Ferrers Rocher
-    url: https://kristorres.github.io/ferrers-rocher
+    url: https://kristorres.pages.dev/ferrers-rocher
     description: >-
       An interactive web app where users can animate bijections of integer
       partitions with Ferrers diagrams.
