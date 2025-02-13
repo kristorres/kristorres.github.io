@@ -4,7 +4,7 @@
     export let title
     export let items
 
-    import Section from "$comp/section.svelte"
+    import Section from "#comp/section"
     import Card from "./items/card.svelte"
 
     const imagePosition = (itemIndex) => {

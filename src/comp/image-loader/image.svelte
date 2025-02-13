@@ -7,7 +7,7 @@
 
     import {wsx} from "@axel669/zephyr"
 
-    import Icon from "$comp/icon.svelte"
+    import Icon from "#comp/icon"
 
     const aspectRatioStyle = (aspectRatio === null)
         ? null

@@ -1,9 +1,9 @@
 <script>
     import {Flex, Grid, Modal} from "@axel669/zephyr"
 
-    import lego from "$/lego.yml"
-    import ImageLoader from "$comp/image-loader.svelte"
-    import Section from "$comp/section.svelte"
+    import ImageLoader from "#comp/image-loader"
+    import Section from "#comp/section"
+    import lego from "#lego"
     import ImageViewer from "./hobbies/image-viewer.svelte"
     import YouTubeVideo from "./hobbies/youtube-video.svelte"
 
@@ -67,7 +67,7 @@
     </Flex>
     <Grid cols="1fr 1fr 1fr" gap="4px" p="0px">
         {#each lego.images as image, index}
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
             <thumbnail on:click={showImage(index)}>
                 <ImageLoader
                     url={thumbnail(image.url)}

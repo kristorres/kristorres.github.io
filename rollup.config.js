@@ -1,5 +1,4 @@
 import copy from "@axel669/rollup-copy-static"
-import $path from "@axel669/rollup-dollar-path"
 import commonJS from "@rollup/plugin-commonjs"
 import html from "@rollup/plugin-html"
 import resolve from "@rollup/plugin-node-resolve"
@@ -8,7 +7,7 @@ import yaml from "@rollup/plugin-yaml"
 import del from "rollup-plugin-delete"
 import svelte from "rollup-plugin-svelte"
 
-import htmlTemplate from "./html-template.mjs"
+import htmlTemplate from "./html-template.js"
 
 export default {
     input: "src/main.mjs",
@@ -21,18 +20,13 @@ export default {
         del({
             targets: "build/*",
         }),
-        $path({
-            root: "src",
-            paths: {
-                $comp: "src/comp",
-                $section: "src/comp/section",
-            },
-        }),
         yaml(),
         svelte({
             emitCss: false,
         }),
-        resolve(),
+        resolve({
+            browser: true,
+        }),
         commonJS(),
         html({
             fileName: "index.html",

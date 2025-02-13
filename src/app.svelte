@@ -10,17 +10,17 @@
         wsx,
     } from "@axel669/zephyr"
 
-    import Footer from "$comp/footer.svelte"
-    import Header from "$comp/header.svelte"
-    import Icon from "$comp/icon.svelte"
-    import Menu from "$comp/menu.svelte"
-    import TypingCarousel from "$comp/typing-carousel.svelte"
-    import AboutMe from "$section/about-me.svelte"
-    import Hobbies from "$section/hobbies.svelte"
-    import Items from "$section/items.svelte"
+    import Footer from "#comp/footer"
+    import Header from "#comp/header"
+    import Icon from "#comp/icon"
+    import Menu from "#comp/menu"
+    import TypingCarousel from "#comp/typing-carousel"
+    import info from "#info"
+    import AboutMe from "#section/about-me"
+    import Hobbies from "#section/hobbies"
+    import Items from "#section/items"
 
-    import info from "./info.yml"
-    import theme from "./state/theme.mjs"
+    import theme from "./state/theme.js"
 
     const {jobs = [], projects = []} = info
 
@@ -34,13 +34,6 @@
 
     let mousePoint = {x: 0, y: 0}
 
-    $: radialGradientArgs = [
-        `600px at ${mousePoint.x}px ${mousePoint.y}px`,
-        "#ffffff20",
-        "transparent 75%",
-    ]
-    $: radialGradient = `[bg radial-gradient(${radialGradientArgs.join(", ")})]`
-
     $: darkMode = ($theme === "dark")
     $: themeButton = (darkMode === true)
         ? {color: "#fbd38d", icon: "sun-high"}
@@ -49,6 +42,16 @@
     const moveRadialGradient = (event) => {
         mousePoint.x = event.clientX
         mousePoint.y = event.clientY
+    }
+
+    const radialGradient = (point) => {
+        const radialGradientArgs = [
+            `600px at ${point.x}px ${point.y}px`,
+            "#ffffff20",
+            "transparent 75%",
+        ]
+
+        return `[bg radial-gradient(${radialGradientArgs.join(", ")})]`
     }
 
     const toggleTheme = () => {
@@ -143,7 +146,7 @@
 
 <background>
     <background-layer ws-x={image} />
-    <background-layer ws-x={radialGradient} />
+    <background-layer ws-x={radialGradient(mousePoint)} />
 </background>
 
 <Screen width="100%">

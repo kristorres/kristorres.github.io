@@ -6,7 +6,7 @@ kristorres.github.io
 ====================
 
 <p>
-    <img src="https://img.shields.io/badge/Svelte-3-ff3e00?style=for-the-badge&logo=svelte" alt="" />
+    <img src="https://img.shields.io/badge/Svelte-4-ff3e00?style=for-the-badge&logo=svelte" alt="" />
 </p>
 
 <picture>

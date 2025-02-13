@@ -6,11 +6,21 @@
 
     import {Flex, Paper} from "@axel669/zephyr"
 
-    import Icon from "$comp/icon.svelte"
-    import ImageLoader from "$comp/image-loader.svelte"
-    import Link from "$comp/link.svelte"
+    import Icon from "#comp/icon"
+    import ImageLoader from "#comp/image-loader"
+    import Link from "#comp/link"
 
     const {name, description, image, url = null, details = null} = item
+
+    const paper = {
+        "bg.c": "@surface",
+        b: "@layer-border-width solid @text-color-secondary",
+        "b.c:hover": "@primary",
+        scrollable: false,
+        w: "100%",
+        "l-p": "16px",
+        tr: "0.25s",
+    }
 
     const chip = "[$fill] [$color @secondary] [no-select]"
 
@@ -61,15 +71,7 @@
     }
 </style>
 
-<Paper
-    bg.c="@surface"
-    b="@layer-border-width solid @text-color-secondary"
-    b.c:hover="@primary"
-    scrollable={false}
-    w="100%"
-    l-p="16px"
-    tr="0.25s"
->
+<Paper {...paper}>
     <card-grid class="image-{imagePosition}">
         <div style="grid-area: image" ws-x="[fl.cross center]">
             {#if url === null}

@@ -1,10 +1,10 @@
 <script>
     import {Flex} from "@axel669/zephyr"
 
-    import {email, socialMedia} from "$/info.yml"
-    import Icon from "$comp/icon.svelte"
-    import Link from "$comp/link.svelte"
-    import Section from "$comp/section.svelte"
+    import Icon from "#comp/icon"
+    import Link from "#comp/link"
+    import Section from "#comp/section"
+    import {email, socialMedia} from "#info"
 
     const siteLinks = Object.entries(socialMedia)
         .map(

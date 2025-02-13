@@ -13,8 +13,8 @@
         Titlebar,
     } from "@axel669/zephyr"
 
-    import Icon from "$comp/icon.svelte"
-    import ImageLoader from "$comp/image-loader.svelte"
+    import Icon from "#comp/icon"
+    import ImageLoader from "#comp/image-loader"
 
     const header = [
         "[flex]",
